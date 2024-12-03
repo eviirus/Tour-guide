@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="travel-help-main-container">
+        <div class="travel-help-container">
+            <div class="travel-help-banner-carousel">
+                <img class="banner-carousel" loading="lazy" alt="Image" src="https://b2ccdn.coraltravel.lt/content/Travel%20in%20January.jpg"/>
+            </div>
+    
+            <div class="travel-help-choice-window">
+                <div class="travel-help-intro">
+                    <h2>Gaukite asmeninį kelionės pasiūlymą tiesiogiai svetainėje</h2>
+                    <p>Atsakydami į paprastus klausimus apie atostogų pageidavimus</p>
+                    <div class="intro-button-container">
+                        <button class="choice-button selected" id="start-button">Pradėkime!</button>
+                    </div>
+                </div>
+    
+                <div class="travel-help-step">
+                    <h2><br></h2>
+                    <h3><br></h3>
+                    <div class="step-choice-grid"><br></div>
+            
+                    <div class="travel-info-sheet">
+                      <div class="info-sheet-item">
+                        <img src="https://b2ccdn.coraltravel.lt/content/Icons%202024%2009%2010-01.svg" class="info-sheet-icon">
+                        <div class="info-sheet-info">
+                          Tiesioginis skrydis<br>
+                          <strong class="info-changing">Apie 3 val.</strong>
+                        </div>
+                      </div>
+                      <div class="info-sheet-item">
+                        <img src="https://b2ccdn.coraltravel.lt/content/Icons%202024%2009%2010-02.svg" class="info-sheet-icon">
+                        <div class="info-sheet-info">
+                          Laiko Skirtumas<br>
+                          <strong class="info-changing">Žiema +1 val.</strong>
+                        </div>
+                      </div>
+                      <div class="info-sheet-item">
+                        <img src="https://b2ccdn.coraltravel.lt/content/Icons%202024%2009%2010-04.svg" class="info-sheet-icon">
+                        <div class="info-sheet-info">
+                          Vidutinė temperatūra<br>
+                          <strong class="info-changing">4 val.</strong>
+                        </div>
+                      </div>
+                      <div class="info-sheet-item">
+                        <img src="https://b2ccdn.coraltravel.lt/content/Icons%202024%2009%2010-03.svg" class="info-sheet-icon">
+                        <div class="info-sheet-info">
+                          Paso galiojimo laikas<br>
+                          <strong class="info-changing">Ne trumpiau 6 mėn.</strong>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+    
+                <div class="final-step">
+                    <h2>Paskutinis žingsnis</h2>
+            
+                    <div class="final-step-content">
+                      <div>
+                        <div class="final-step-content-element">
+                          <p class="final-step-static-p">Kryptis - </p>
+                          <p class="final-step-dynamic-p" id="destination"></p>
+                        </div>
+                        <div class="final-step-content-element">
+                          <p class="final-step-static-p">Trukmė - </p>
+                          <p class="final-step-dynamic-p" id="date"></p>
+                        </div>
+                        <div class="final-step-content-element">
+                          <p class="final-step-static-p">Keliautojai - </p>
+                          <p class="final-step-dynamic-p" id="traveler"></p>
+                        </div>
+                        <div class="final-step-content-element">
+                          <p class="final-step-static-p">Detalės - </p>
+                          <p class="final-step-dynamic-p" id="details"></p>
+                        </div>
+                      </div>
+            
+                      <div class="final-step-button-container">
+                        <p>Peržiūrėkite galimus variantus.<br>Jeigu rezultatų nėra arba jums nepatiko, siūlome susisiekti su mumis - padėsime sukurti kėlionę!</p>
+                        <button type="button" class="final-step-button-view" onclick="throwSearchResult()">Peržiūrėti pasiūlymus</button>
+                        <button type="button" class="final-step-button-contact" onclick="window.location.href='https://coraltravel.lt/contact-us/'">Susisiekti</button>
+                      </div>
+                    </div>
+            
+                </div>
+    
+                <div class="travel-help-step-progress">
+                    <button class="button-direction-prev" type="button"><svg class="arrow-icon-prev" width="21" height="21" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 6L8 11L13 6" stroke="#000" stroke-linejoin="round"></path>
+                      </svg>Grįžti</button>
+                    <div class="progress-bar">
+                      <div class="bar-filler"><br></div>
+                    </div>
+                    <button class="button-direction-next" type="button">Toliau<svg class="arrow-icon-next" width="21" height="21" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 6L8 11L13 6" stroke="#fff" stroke-linejoin="round"></path>
+                      </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="index.js"></script>
+    <script src="travelGuide.js"></script>
+    <script src="stepsManager.js"></script>
+    <script src="infoSheetManager.js"></script>
+    <script type="module" src="steps.js"></script>
+    <script type="module" src="infoSheet.js"></script>
+</body>
+</html>
