@@ -42,12 +42,12 @@ class TravelGuide {
     attachPrevButtonListener() {
         const prevBtn = document.querySelector('.button-direction-prev');
         if (prevBtn) {
-          prevBtn.replaceWith(prevBtn.cloneNode(true));
-          const newPrevBtn = document.querySelector('.button-direction-prev');
-          newPrevBtn.addEventListener('click', () => {
-            newPrevBtn.classList.add('btn-clicked');
+          //prevBtn.replaceWith(prevBtn.cloneNode(true));
+          //const newPrevBtn = document.querySelector('.button-direction-prev');
+          prevBtn.addEventListener('click', () => {
+            prevBtn.classList.add('btn-clicked');
             setTimeout(() => {
-              newPrevBtn.classList.remove('btn-clicked');
+              prevBtn.classList.remove('btn-clicked');
             }, 100);
 ;
             if (this.finalStepContainer.style.display === 'flex') {
@@ -74,12 +74,12 @@ class TravelGuide {
         var isFinal = false;
         const nextBtn = document.querySelector('.button-direction-next');
         if (nextBtn) {
-          nextBtn.replaceWith(nextBtn.cloneNode(true));
-          const newNextBtn = document.querySelector('.button-direction-next');
-          newNextBtn.addEventListener('click', () => {
-            newNextBtn.classList.add('btn-clicked');
+          //nextBtn.replaceWith(nextBtn.cloneNode(true));
+          //const newNextBtn = document.querySelector('.button-direction-next');
+          nextBtn.addEventListener('click', () => {
+            nextBtn.classList.add('btn-clicked');
             setTimeout(() => {
-              newNextBtn.classList.remove('btn-clicked');
+              nextBtn.classList.remove('btn-clicked');
             }, 100);
             if (this.currentStep < this.steps.length - 1) {
                 this.currentStep++;
