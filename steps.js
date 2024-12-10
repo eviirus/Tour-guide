@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 export const steps = [
   {
     heading: "Pradėkime!",
@@ -63,3 +64,70 @@ export const steps = [
     img: "https://b2ccdn.coraltravel.lt/content/Kelionės per Velykas.jpg",
   },
 ];
+=======
+export const steps = [
+  {
+    heading: "Pradėkime!",
+    question: "Kada norėtumėte keliauti?",
+    choices: ["Vasarą", "Rudenį", "Žiemą", "Pavasarį"],
+    layout: null,
+    img: "https://b2ccdn.coraltravel.lt/content/Travel in June.jpg",
+  },
+  {
+    heading: "Gerai!",
+    question: "Kokia kelionės trukmė Jums aktuali?",
+    choices: ["3 – 5 naktys", "6 – 9 naktys", "10 – 12 naktų", "14 ir daugiau"],
+    layout: null,
+    img: "https://b2ccdn.coraltravel.lt/content/Kelionės rugsėjo mėnesį.jpg",
+  },
+  {
+    heading: "",
+    question: "Kokia kryptis/šalis Jus domina?",
+    choices: [
+      "JAE",
+      "Egiptas",
+      "Graikija",
+      "Juodkalnija",
+      "Ispanija",
+      "Tunisas",
+      "Turkija",
+      "Tailandas",
+      "Vietnamas",
+      "Dominikos Respublika",
+    ],
+    layout: "grid",
+    img: "https://b2ccdn.coraltravel.lt/content/Kelionės gegužės mėnesį.jpg",
+  },
+  {
+    heading: "Pasitikslinkime detales",
+    question: "Su kuo keliausite?",
+    choices: ["Vienas (-a)", "Su partneriu", "Su šeima", "Su draugais"],
+    layout: null,
+    img: "https://b2ccdn.coraltravel.lt/content/Paskutinės minutės kelionės į Dubajų.jpg",
+  },
+  {
+    heading: "Nuostabu!",
+    question: "Kokio poilsio norėtumėte?",
+    choices: ["Aktyvaus", "Ramaus", "Šeimai ", "Prabangaus"],
+    layout: null,
+    img: "https://b2ccdn.coraltravel.lt/content/Kelionės rugpjūčio mėnesį.jpg",
+  },
+  {
+    heading: "Puiku!",
+    question: "Kas Jums aktualu atostogų metu?",
+    choices: [
+      "Smėlėtas paplūdimys",
+      "Diskoteka ir pramogos viešbutyje",
+      "Ekskursijos / aktyvus poilsis",
+      "Labiau orientuota į suaugusius",
+      "Vandens kalneliai / parkai ",
+      "Mini klubas ir kitos paslaugos vaikams",
+      "Miestelis šalia viešbučio",
+      "Sportas",
+      "Viskas įskaičiuota",
+    ],
+    layout: "grid-two-col",
+    img: "https://b2ccdn.coraltravel.lt/content/Kelionės per Velykas.jpg",
+  },
+];
+>>>>>>> 620af92a668dd50f4adb8696cb7258668d8217b0
