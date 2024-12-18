@@ -39,6 +39,13 @@ export const steps = [
     img: "https://b2ccdn.coraltravel.lt/content/Paskutinės minutės kelionės į Dubajų.jpg",
   },
   {
+    heading: "Gerai!",
+    question: "Kokį biudžetą planuojate skirti kelionei?",
+    choices: ["iki 700€ asm.", "iki 1000€ asm.", "virš 1000€ asm."],
+    layout: null,
+    img: "https://b2ccdn.coraltravel.lt/content/Kelionės gegužės mėnesį.jpg",
+  },
+  {
     heading: "Nuostabu!",
     question: "Kokio poilsio norėtumėte?",
     choices: ["Aktyvaus", "Ramaus", "Šeimai ", "Prabangaus"],
@@ -57,7 +64,7 @@ export const steps = [
       "Mini klubas ir kitos paslaugos vaikams",
       "Miestelis šalia viešbučio",
       "Sportas",
-      "Viskas įskaičiuota",
+      "Elite viešbučiai",
     ],
     layout: "grid-two-col",
     img: "https://b2ccdn.coraltravel.lt/content/Kelionės per Velykas.jpg",

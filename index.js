@@ -1,5 +1,5 @@
-import { infoSheet } from "./infoSheet.js";
-import { steps } from "./steps.js";
+import { infoSheet } from "./scripts/infoSheet.js";
+import { steps } from "./scripts/steps.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const guide = new TravelGuide(steps);
