@@ -50,6 +50,7 @@
   font-size: 12px;
   padding: 0 18px;
   box-sizing: border-box;
+  height: 2.7em;
 }
 
 .choice-button.grid {
@@ -92,12 +93,19 @@
   .choice-button,
   .choice-button.selected,
   .choice-button.grid-two-columns {
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 
 @media (max-width: 470px) {
   .choice-button.grid:nth-child(7) {
     grid-column: span 1 !important;
+  }
+}
+
+@media(max-width: 375px){
+  .choice-button.grid-two-columns{
+    height: auto;
+    padding: 5px 10px;
   }
 }

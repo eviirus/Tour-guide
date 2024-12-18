@@ -68,6 +68,12 @@
   margin-bottom: 50px;
 }
 
+@media(max-width: 1300px){
+  .travel-help-step.grid-two-columns{
+    padding: 20px 30px;
+  }
+}
+
 @media (max-width: 1023px) {
   .travel-help-step h2,
   .final-step h2 {
@@ -77,6 +83,10 @@
   .travel-help-step h3 {
     font-size: 18px;
   }
+
+  .step-choice-grid.grid-two-columns{
+    padding: 0;
+  }
 }
 
 @media (max-width: 600px) {
@@ -85,7 +95,7 @@
   }
 
   .step-choice-grid.grid-two-columns {
-    padding: 0 1.7em;
+    padding: 0;
     box-sizing: border-box;
   }
 }
