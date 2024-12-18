@@ -8,13 +8,15 @@ class ContainersManagement {
     this.steps = steps;
     this.countryChoice = "";
 
+    this.initializeDOMElements();
+  }
+
+  initializeDOMElements(){
     this.introContainer = document.querySelector(".travel-help-intro");
     this.stepContainer = document.querySelector(".travel-help-step");
     this.progressBar = document.querySelector(".travel-help-step-progress");
     this.bannerCarousel = document.querySelector(".banner-carousel");
-
     this.finalStepContainer = document.querySelector(".final-step");
-
     this.infoSheetContainer = document.querySelector(".travel-info-sheet");
     this.buttonContainer = document.querySelector(".step-choice-grid");
   }
@@ -29,42 +31,57 @@ class ContainersManagement {
 
   handlePreviousButtonClick() {
     if (this.finalStepContainer.style.display === "flex") {
-      this.finalStepContainer.style.display = "none";
-      this.stepContainer.style.display = "flex";
-      this.guide.stepsManager.displayStep(this.currentStep);
-      this.isFinal = false;
-      this.guide.nextButtonEffects();
+      this.navigatePrevFromFinalStep();
     } else if (this.currentStep > 0) {
-      this.currentStep--;
-      this.guide.stepsManager.displayStep(this.currentStep);
+      this.navigatePrevDefaultStep();
     } else if (this.currentStep === 0) {
-      this.bannerCarousel.src =
-        "https://b2ccdn.coraltravel.lt/content/Travel%20in%20January.jpg";
-      this.introContainer.style.display = "flex";
-      this.stepContainer.style.display = "none";
-      this.progressBar.style.display = "none";
-      this.answers = [];
-      this.currentStep = 0;
-      this.countryChoice = "";
+      this.navigatePrevToIntro();
     }
   }
 
   handleNextButtonClick() {
-    if (this.introContainer.style.display === "flex") {
-      this.introContainer.style.display = "none";
-      this.stepContainer.style.display = "flex";
-      this.progressBar.style.display = "flex";
-      this.guide.stepsManager.displayStep(this.currentStep);
-    } else if (this.currentStep < this.steps.length - 1) {
-      this.currentStep++;
-      this.guide.stepsManager.displayStep(this.currentStep);
+    if (this.currentStep < this.steps.length - 1) {
+      this.navigateNextDefaultStep();
     } else if (this.currentStep === this.steps.length - 1) {
-      this.guide.stepsManager.catchAnswer();
-      this.guide.stepsManager.updateProgress((this.isFinal = true));
-      this.guide.nextButtonEffects();
-      this.stepContainer.style.display = "none";
-      this.finalStepContainer.style.display = "flex";
+      this.navigateNextToFinalStep();
     }
+  }
+
+  navigatePrevFromFinalStep() {
+    this.finalStepContainer.style.display = "none";
+    this.stepContainer.style.display = "flex";
+    this.guide.stepsManager.displayStep(this.currentStep);
+    this.isFinal = false;
+    this.guide.nextButtonEffects();
+  }
+
+  navigatePrevDefaultStep() {
+    this.currentStep--;
+    this.guide.stepsManager.displayStep(this.currentStep);
+  }
+
+  navigatePrevToIntro() {
+    this.bannerCarousel.src =
+      "https://b2ccdn.coraltravel.lt/content/Travel%20in%20January.jpg";
+    this.introContainer.style.display = "flex";
+    this.stepContainer.style.display = "none";
+    this.progressBar.style.display = "none";
+    this.answers = [];
+    this.currentStep = 0;
+    this.countryChoice = "";
+  }
+
+  navigateNextDefaultStep() {
+    this.currentStep++;
+    this.guide.stepsManager.displayStep(this.currentStep);
+  }
+
+  navigateNextToFinalStep() {
+    this.guide.stepsManager.catchAnswer();
+    this.guide.stepsManager.updateProgress((this.isFinal = true));
+    this.guide.nextButtonEffects();
+    this.stepContainer.style.display = "none";
+    this.finalStepContainer.style.display = "flex";
   }
 
   updateLayoutGrid() {

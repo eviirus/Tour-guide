@@ -19,6 +19,10 @@ class TravelGuide {
   constructor(infoSheet) {
     this.infoSheet = infoSheet;
 
+    this.initializeDOMElements();
+  }
+
+  initializeDOMElements(){
     this.destinationAnswer = document.getElementById("destination");
     this.travelersAnswer = document.getElementById("traveler");
     this.dateAnswer = document.getElementById("date");
@@ -46,7 +50,7 @@ class TravelGuide {
       this.containersManagement.handlePreviousButtonClick();
     });
   }
-  
+
   attachNextButtonListener() {
     this.attachButtonListener(this.nextBtn, () => {
       this.containersManagement.handleNextButtonClick();
@@ -54,40 +58,42 @@ class TravelGuide {
   }
 
   attachButtonListener(button, handler) {
-    if (button) {
-      const buttonHandler = (event) => {
-        button.classList.add("btn-clicked");
-        setTimeout(() => {
-          button.classList.remove("btn-clicked");
-        }, 100);
+    if (!button._handlerRef) {
+      button._handlerRef = handler;
+      button.addEventListener("click", (event) => {
+        this.applyButtonClickEffect(button);
         handler(event);
-      };
-  
-      button.removeEventListener("click", button._handlerRef);
-      button.addEventListener("click", buttonHandler);
-  
-      button._handlerRef = buttonHandler;
+      });
     }
   }
-  
+
+  applyButtonClickEffect(button) {
+    button.classList.add("btn-clicked");
+    setTimeout(() => {
+      button.classList.remove("btn-clicked");
+    }, 100);
+  }
+
+  nextButtonState(isFinal, currentStep) {
+    const color = currentStep % 2 === 0 ? TravelGuide.BLUE_COLOR : TravelGuide.ORANGE_COLOR;
+    this.nextBtn.style.backgroundColor = color;
+
+    if (isFinal) {
+      this.nextBtn.innerHTML = TravelGuide.NEXT_BUTTON_FINAL_STEP;
+    } else {
+      this.nextBtn.innerHTML = TravelGuide.NEXT_BUTTON_DEFAULT_STEP;
+    }
+  }
 
   nextButtonEffects() {
     const currentStep = this.containersManagement.getCurrentStep();
     const isFinal = this.containersManagement.getIsFinal();
-    
-    currentStep % 2 === 0
-      ? (this.nextBtn.style.backgroundColor = TravelGuide.BLUE_COLOR)
-      : (this.nextBtn.style.backgroundColor = TravelGuide.ORANGE_COLOR);
+
+    this.nextButtonState(isFinal, currentStep);
 
     if (isFinal) {
-      this.nextBtn.innerHTML = TravelGuide.NEXT_BUTTON_FINAL_STEP;
-      (currentStep + 1) % 2 === 0
-        ? (this.nextBtn.style.backgroundColor = TravelGuide.BLUE_COLOR)
-        : (this.nextBtn.style.backgroundColor = TravelGuide.ORANGE_COLOR);
-
       //nextBtn.addEventListener('click', throwSearchResult);
     } else {
-      this.nextBtn.innerHTML = TravelGuide.NEXT_BUTTON_DEFAULT_STEP;
       //nextBtn.removeEventListener('click', throwSearchResult);
     }
   }
