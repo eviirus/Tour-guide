@@ -73,46 +73,25 @@ class StepManager {
     button.addEventListener("click", () =>
       this.handleChoiceButtonClick(choice, stepData, button)
     );
-    // check on coral - only then remove
-    // button.addEventListener("touchstart", (event) => {
-    //   event.preventDefault();
-    //   this.handleChoiceButtonClick(choice, stepData, button);
-    // });
 
     this.guide.containersManagement.buttonContainer.appendChild(button);
   }
 
-  // refactor
-  // fix countryChoice saving country to grid-two-col answer field
   handleChoiceButtonClick(choice, stepData, button) {
     if(stepData.layout === "grid"){
       this.guide.containersManagement.handleChoiceButtonClickGrid(choice, button);
     }else if(stepData.layout === "grid-two-col"){
       this.guide.containersManagement.handleChoiceButtonClickGridTwoCol(choice, button);
-    }
-    // if (stepData.layout === "grid" || stepData.layout === "grid-two-col") {
-    //   if (button.classList.contains("selected")) {
-    //     button.classList.remove("selected");
-    //   } else {
-    //     document
-    //       .querySelectorAll(".choice-button")
-    //       .forEach((btn) => btn.classList.remove("selected"));
-    //     button.classList.add("selected");
-    //     this.guide.infoSheetManager.displayInfoSheet(choice);
-    //     this.countryChoice = choice;
-    //   }
-    //} 
-    else {
-      this.guide.containersManagement.answers[this.guide.containersManagement.currentStep] = choice;
-      this.guide.containersManagement.currentStep++;
-      this.displayStep(this.guide.containersManagement.currentStep);
+    }else{
+      this.guide.containersManagement.handleChoiceButtonClickNoCol(choice);
     }
   }
 
   updateProgress(isFinal) {
     const barFiller = document.querySelector(".bar-filler");
+    let currentStep = this.guide.containersManagement.getCurrentStep();
     var percentage =
-      ((this.guide.containersManagement.currentStep + 1) /
+      ((currentStep + 1) /
         (this.guide.containersManagement.steps.length + 1)) *
       100;
     if (isFinal) {

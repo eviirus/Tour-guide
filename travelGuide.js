@@ -39,11 +39,6 @@ class TravelGuide {
       this.attachPrevButtonListener();
     };
     startBtn.addEventListener("click", handleStart);
-    // check on coral - only then remove
-    // startBtn.addEventListener("touchstart", (event) => {
-    //   event.preventDefault();
-    //   handleStart();
-    // });
   }
 
   attachPrevButtonListener() {
@@ -60,15 +55,21 @@ class TravelGuide {
 
   attachButtonListener(button, handler) {
     if (button) {
-      button.addEventListener("click", () => {
+      const buttonHandler = (event) => {
         button.classList.add("btn-clicked");
         setTimeout(() => {
           button.classList.remove("btn-clicked");
         }, 100);
-        handler();
-      });
+        handler(event);
+      };
+  
+      button.removeEventListener("click", button._handlerRef);
+      button.addEventListener("click", buttonHandler);
+  
+      button._handlerRef = buttonHandler;
     }
   }
+  
 
   nextButtonEffects() {
     const currentStep = this.containersManagement.getCurrentStep();

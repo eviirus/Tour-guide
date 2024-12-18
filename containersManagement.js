@@ -44,11 +44,18 @@ class ContainersManagement {
       this.stepContainer.style.display = "none";
       this.progressBar.style.display = "none";
       this.answers = [];
+      this.currentStep = 0;
+      this.countryChoice = "";
     }
   }
 
   handleNextButtonClick() {
-    if (this.currentStep < this.steps.length - 1) {
+    if (this.introContainer.style.display === "flex") {
+      this.introContainer.style.display = "none";
+      this.stepContainer.style.display = "flex";
+      this.progressBar.style.display = "flex";
+      this.guide.stepsManager.displayStep(this.currentStep);
+    } else if (this.currentStep < this.steps.length - 1) {
       this.currentStep++;
       this.guide.stepsManager.displayStep(this.currentStep);
     } else if (this.currentStep === this.steps.length - 1) {
@@ -100,6 +107,12 @@ class ContainersManagement {
       button.classList.add("selected");
       this.answers[this.currentStep] = choice;
     }
+  }
+
+  handleChoiceButtonClickNoCol(choice) {
+    this.answers[this.currentStep] = choice;
+    this.currentStep++;
+    this.guide.stepsManager.displayStep(this.currentStep);
   }
 
   getCurrentStep() {
