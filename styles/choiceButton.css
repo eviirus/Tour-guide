@@ -101,9 +101,7 @@
   .choice-button.grid:nth-child(7) {
     grid-column: span 1 !important;
   }
-}
 
-@media(max-width: 375px){
   .choice-button.grid-two-columns{
     height: auto;
     padding: 5px 10px;
