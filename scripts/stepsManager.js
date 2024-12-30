@@ -5,6 +5,17 @@ class StepManager {
 
     this.headingContainer = document.querySelector(".travel-help-step h2");
     this.questionContainer = document.querySelector(".travel-help-step h3");
+
+    this.initializeDOMElements();
+  }
+
+  initializeDOMElements(){
+    this.destinationAnswer = document.getElementById("destination");
+    this.travelersAnswer = document.getElementById("traveler");
+    this.dateAnswer = document.getElementById("date");
+    this.detailsAnswer = document.getElementById("details");
+    this.budgetAnswer = document.getElementById("budget");
+    this.seasonAnswer = document.getElementById("season");
   }
 
   displayStep(stepIndex = 0) {
@@ -25,7 +36,7 @@ class StepManager {
     );
 
     this.updateProgress();
-    this.guide.nextButtonEffects();
+    this.guide.nextButtonState();
   }
 
   debug(){
@@ -114,13 +125,17 @@ class StepManager {
   }
 
   catchAnswer() {
-    this.guide.dateAnswer.textContent =
-      this.guide.containersManagement.answers[1];
-    this.guide.destinationAnswer.textContent =
+    this.destinationAnswer.textContent =
       this.guide.containersManagement.countryChoice;
-    this.guide.travelersAnswer.textContent =
-      this.guide.containersManagement.answers[3];
-    this.guide.detailsAnswer.textContent =
+    this.budgetAnswer.textContent = 
       this.guide.containersManagement.answers[4];
+    this.seasonAnswer.textContent = 
+      this.guide.containersManagement.answers[0];
+    this.dateAnswer.textContent =
+      this.guide.containersManagement.answers[1];
+    this.travelersAnswer.textContent =
+      this.guide.containersManagement.answers[3];
+    this.detailsAnswer.textContent =
+      this.guide.containersManagement.answers[5];
   }
 }

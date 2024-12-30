@@ -6,14 +6,14 @@
   line-height: 1;
   border-radius: 0.5em;
   padding: 0 30px;
-  transition: 0.5s ease background;
+  transition: 0.5s ease background, box-shadow 0.5s ease;
   display: inline-flex;
   height: 2.4em;
   align-items: center;
   justify-content: center;
   width: 100%;
   border: 0;
-  box-shadow: inset 0 0 0 2px;
+  box-shadow: inset 0 0 0 2px #e84f0e;
   cursor: pointer;
   flex-grow: 1;
   flex-shrink: 1;
@@ -30,7 +30,7 @@
   line-height: 1;
   border-radius: 0.5em;
   padding: 0 30px;
-  transition: 0.5s ease background;
+  transition: 0.5s ease background, box-shadow 0.5s ease;
   display: inline-flex;
   height: 2.4em;
   align-items: center;
@@ -44,6 +44,7 @@
 .choice-button.selected {
   color: #fff;
   background-color: #e84f0e;
+  box-shadow: inset 0 0 0 2px #e84f0e;
 }
 
 .choice-button.grid-two-columns {
@@ -61,7 +62,7 @@
   line-height: 1;
   border-radius: 0.5em;
   padding: 0 30px;
-  transition: 0.5s ease background;
+  transition: 0.5s ease background, box-shadow 0.5s ease;
   display: inline-flex;
   height: 2.4em;
   align-items: center;
@@ -78,7 +79,7 @@
 .choice-button:hover {
   color: #fff;
   background-color: #e84f0e;
-  border: none;
+  box-shadow: inset 0 0 0 2px #e84f0e;
 }
 
 .choice-button.grid:nth-child(7) {

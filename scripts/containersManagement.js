@@ -1,5 +1,5 @@
 class ContainersManagement {
-  constructor(guide, steps) {
+  constructor(guide, steps, fetchEncryptedData) {
     this.guide = guide;
 
     this.answers = [];
@@ -7,6 +7,8 @@ class ContainersManagement {
     this.currentStep = 0;
     this.steps = steps;
     this.countryChoice = "";
+
+    this.fetchEncryptedData = fetchEncryptedData;
 
     this.initializeDOMElements();
   }
@@ -52,7 +54,7 @@ class ContainersManagement {
     this.stepContainer.style.display = "flex";
     this.guide.stepsManager.displayStep(this.currentStep);
     this.isFinal = false;
-    this.guide.nextButtonEffects();
+    this.guide.nextButtonState();
   }
 
   navigatePrevDefaultStep() {
@@ -79,9 +81,12 @@ class ContainersManagement {
   navigateNextToFinalStep() {
     this.guide.stepsManager.catchAnswer();
     this.guide.stepsManager.updateProgress((this.isFinal = true));
-    this.guide.nextButtonEffects();
+    this.guide.nextButtonState();
     this.stepContainer.style.display = "none";
     this.finalStepContainer.style.display = "flex";
+
+    this.guide.valuesGenerating.generateResults();
+    this.fetchEncryptedData(this.countryChoice, this.guide.valuesGenerating.getValues());
   }
 
   updateLayoutGrid() {
@@ -138,5 +143,21 @@ class ContainersManagement {
 
   getIsFinal() {
     return this.isFinal;
+  }
+
+  getNightChoice() {
+    return this.answers[1];
+  }
+
+  getPriceChoice() {
+    return this.answers[4];
+  }
+
+  getSeasonChoice() {
+    return this.answers[0];
+  }
+
+  getTravellerChoice() {
+    return this.answers[3];
   }
 }

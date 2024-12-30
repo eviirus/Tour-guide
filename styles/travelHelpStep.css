@@ -103,6 +103,6 @@
 @media (max-width: 470px) {
   .step-choice-grid.grid {
     grid-template-columns: repeat(2, 1fr) !important;
-    margin-bottom: 170px !important;
+    margin-bottom: 130px !important;
   }
 }

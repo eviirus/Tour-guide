@@ -9,7 +9,7 @@ export const steps = [
   {
     heading: "Gerai!",
     question: "Kokia kelionės trukmė Jums aktuali?",
-    choices: ["3 – 5 naktys", "6 – 9 naktys", "10 – 12 naktų", "14 ir daugiau"],
+    choices: ["3 - 5 naktys", "6 - 9 naktys", "10 - 12 naktų", "14 ir daugiau"],
     layout: null,
     img: "https://b2ccdn.coraltravel.lt/content/Kelionės rugsėjo mėnesį.jpg",
   },

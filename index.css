@@ -34,9 +34,104 @@
   margin-left: auto;
 }
 
+.travel-help-intro {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 20px 60px;
+  background-color: #fff;
+  position: relative;
+  z-index: 2;
+  margin-left: auto;
+  align-self: center;
+  border-radius: 24px;
+  box-sizing: border-box;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+}
+
+.travel-help-intro h2 {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.travel-help-intro p {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.intro-button-container {
+  width: 100%;
+  align-items: stretch;
+}
+
+.intro-start-button{
+  font-weight: 700;
+  font-size: 20px;
+  color: #fff;
+  background-color: #e84f0e;
+  box-shadow: inset 0 0 0 2px #e84f0e;
+  line-height: 1;
+  border-radius: 0.5em;
+  padding: 0 30px;
+  display: inline-flex;
+  height: 2.4em;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border: 0;
+  cursor: pointer;
+}
+
+.button-img {
+  width: 13px;
+  height: 13px;
+}
+
+.banner-carousel img {
+  opacity: 1;
+  /* Initial state of the image */
+}
+
+.banner-carousel.fade-out img {
+  animation: fadeOut 1s forwards;
+  /* Fade out over 1 second */
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    /* Fully visible */
+  }
+
+  100% {
+    opacity: 0;
+    /* Fully invisible */
+  }
+}
+
 @media (max-width: 1300px) {
   .travel-help-choice-window {
     max-width: 440px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .travel-help-intro h2 {
+    font-size: 24px;
+  }
+
+  .travel-help-intro p {
+    font-size: 16px;
+  }
+
+  .intro-start-button{
+    font-size: 14px;
   }
 }
 
@@ -72,77 +167,4 @@
   .travel-help-banner-carousel img {
     object-fit: cover;
   }
-}
-
-.travel-help-intro {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-  padding: 20px 60px;
-  background-color: #fff;
-  position: relative;
-  z-index: 2;
-  margin-left: auto;
-  align-self: center;
-  border-radius: 24px;
-  box-sizing: border-box;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  gap: 1em;
-}
-
-.travel-help-intro h2 {
-  font-size: 32px;
-  font-weight: 700;
-  line-height: 1.5;
-  margin: 0;
-}
-
-.travel-help-intro p {
-  font-size: 20px;
-  font-weight: 400;
-}
-
-@media (max-width: 1023px) {
-  .travel-help-intro h2 {
-    font-size: 24px;
-  }
-
-  .travel-help-intro p {
-    font-size: 16px;
-  }
-}
-
-.intro-button-container {
-  width: 100%;
-  align-items: stretch;
-}
-
-.button-img {
-  width: 13px;
-  height: 13px;
-}
-
-@keyframes fadeOut {
-  0% {
-    opacity: 1;
-    /* Fully visible */
-  }
-
-  100% {
-    opacity: 0;
-    /* Fully invisible */
-  }
-}
-
-.banner-carousel img {
-  opacity: 1;
-  /* Initial state of the image */
-}
-
-.banner-carousel.fade-out img {
-  animation: fadeOut 1s forwards;
-  /* Fade out over 1 second */
 }

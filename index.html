@@ -23,7 +23,7 @@
                     <h2>Gaukite asmeninį kelionės pasiūlymą tiesiogiai svetainėje</h2>
                     <p>Atsakydami į paprastus klausimus apie atostogų pageidavimus</p>
                     <div class="intro-button-container">
-                        <button class="choice-button selected" id="start-button">Pradėkime!</button>
+                        <button class="intro-start-button" id="start-button">Pradėkime!</button>
                     </div>
                 </div>
     
@@ -43,7 +43,7 @@
                       <div class="info-sheet-item">
                         <img src="https://b2ccdn.coraltravel.lt/content/Icons%202024%2009%2010-02.svg" class="info-sheet-icon">
                         <div class="info-sheet-info">
-                          Laiko Skirtumas<br>
+                          Laiko skirtumas<br>
                           <strong class="info-changing">Žiema +1 val.</strong>
                         </div>
                       </div>
@@ -58,7 +58,7 @@
                         <img src="https://b2ccdn.coraltravel.lt/content/Icons%202024%2009%2010-03.svg" class="info-sheet-icon">
                         <div class="info-sheet-info">
                           Paso galiojimo laikas<br>
-                          <strong class="info-changing">Ne trumpiau 6 mėn.</strong>
+                          <strong class="info-changing"><a class="passport-info-link" href="https://coraltravel.lt/countries/turkey" target="_blank" rel="noopener noreferrer">Skaityti</a></strong>
                         </div>
                       </div>
                     </div>
@@ -72,6 +72,14 @@
                         <div class="final-step-content-element">
                           <p class="final-step-static-p">Kryptis - </p>
                           <p class="final-step-dynamic-p" id="destination"></p>
+                        </div>
+                        <div class="final-step-content-element">
+                          <p class="final-step-static-p">Biudžetas - </p>
+                          <p class="final-step-dynamic-p" id="budget"></p>
+                        </div>
+                        <div class="final-step-content-element">
+                          <p class="final-step-static-p">Kada - </p>
+                          <p class="final-step-dynamic-p" id="season"></p>
                         </div>
                         <div class="final-step-content-element">
                           <p class="final-step-static-p">Trukmė - </p>
@@ -119,5 +127,12 @@
     <script type="module" src="scripts/steps.js"></script>
     <script type="module" src="scripts/infoSheet.js"></script>
     <script src="scripts/containersManagement.js"></script>
+    <script type="module" src="scripts/answersManagement/countryDetails.js"></script>
+    <script type="module" src="scripts/answersManagement/seasonManagement.js"></script>
+    <script type="module" src="scripts/answersManagement/priceManagement.js"></script>
+    <script type="module" src="scripts/answersManagement/nightManagement.js"></script>
+    <script type="module" src="scripts/answersManagement/travellerManagement.js"></script>
+    <script src="scripts/valuesGenerating.js"></script>
+    <script type="module" src="scripts/searchResultGenerating.js"></script>
 </body>
 </html>

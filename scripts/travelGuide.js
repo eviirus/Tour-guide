@@ -23,10 +23,6 @@ class TravelGuide {
   }
 
   initializeDOMElements(){
-    this.destinationAnswer = document.getElementById("destination");
-    this.travelersAnswer = document.getElementById("traveler");
-    this.dateAnswer = document.getElementById("date");
-    this.detailsAnswer = document.getElementById("details");
     this.nextBtn = document.querySelector(".button-direction-next");
     this.prevBtn = document.querySelector(".button-direction-prev");
   }
@@ -74,7 +70,10 @@ class TravelGuide {
     }, 100);
   }
 
-  nextButtonState(isFinal, currentStep) {
+  nextButtonState() {
+    const currentStep = this.containersManagement.getCurrentStep();
+    const isFinal = this.containersManagement.getIsFinal();
+
     const color = currentStep % 2 === 0 ? TravelGuide.BLUE_COLOR : TravelGuide.ORANGE_COLOR;
     this.nextBtn.style.backgroundColor = color;
 
@@ -82,19 +81,6 @@ class TravelGuide {
       this.nextBtn.innerHTML = TravelGuide.NEXT_BUTTON_FINAL_STEP;
     } else {
       this.nextBtn.innerHTML = TravelGuide.NEXT_BUTTON_DEFAULT_STEP;
-    }
-  }
-
-  nextButtonEffects() {
-    const currentStep = this.containersManagement.getCurrentStep();
-    const isFinal = this.containersManagement.getIsFinal();
-
-    this.nextButtonState(isFinal, currentStep);
-
-    if (isFinal) {
-      //nextBtn.addEventListener('click', throwSearchResult);
-    } else {
-      //nextBtn.removeEventListener('click', throwSearchResult);
     }
   }
 }

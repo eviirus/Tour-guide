@@ -1,6 +1,8 @@
 class InfoSheetManager {
   constructor(infoSheet) {
     this.infoSheet = infoSheet;
+
+    this.passportLink = document.querySelector(".passport-info-link");
   }
 
   displayInfoSheet(choice) {
@@ -13,8 +15,10 @@ class InfoSheetManager {
       selectedInfo.content.forEach((content, index) => {
         infoChange[index].textContent = content || " ";
       });
+      this.passportLink.href = selectedInfo.link || "#";
     } else {
       infoChange.forEach((content) => (content.textContent = " "));
+      this.passportLink.href = "#";
     }
   }
 }
