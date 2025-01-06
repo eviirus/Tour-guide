@@ -93,6 +93,14 @@
   background-color: rgb(230, 244, 255);
 }
 
+.final-step-button-view:hover {
+  background-color: #0079a1;
+}
+
+.final-step-button-contact:hover {
+  background-color: rgb(204, 230, 255);
+}
+
 @media (max-width: 1400px) {
   .final-step {
     padding: 20px 10px;

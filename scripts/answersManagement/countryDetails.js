@@ -167,8 +167,8 @@ export const countryDetails = [
         ],
         departureLocation:[
             {
-                payloadName: "Vilnius",
-                payloadFriendlyUrl: "vilnius",
+                payloadName: "Warszawa",
+                payloadFriendlyUrl: "warszawa",
                 payloadId: "500-5",
                 payloadLocationId: "500",
                 payloadLocationUniqueId: "500-5",
@@ -189,8 +189,8 @@ export const countryDetails = [
         ],
         departureLocation:[
             {
-                payloadName: "Vilnius",
-                payloadFriendlyUrl: "vilnius",
+                payloadName: "Warszawa",
+                payloadFriendlyUrl: "warszawa",
                 payloadId: "500-5",
                 payloadLocationId: "500",
                 payloadLocationUniqueId: "500-5",
@@ -211,8 +211,8 @@ export const countryDetails = [
         ],
         departureLocation:[
             {
-                payloadName: "Vilnius",
-                payloadFriendlyUrl: "vilnius",
+                payloadName: "Warszawa",
+                payloadFriendlyUrl: "warszawa",
                 payloadId: "500-5",
                 payloadLocationId: "500",
                 payloadLocationUniqueId: "500-5",

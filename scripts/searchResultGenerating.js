@@ -80,7 +80,6 @@ export async function fetchEncryptedData(selectedCountry, values) {
         const { redirectionUrl, queryParam } = encryptedData.result;
 
         const link = `https://www.coraltravel.lt${redirectionUrl}?qp=${queryParam}&p=1&s=0&w=0`;
-        console.log("Link:", link);
 
         return link;
 

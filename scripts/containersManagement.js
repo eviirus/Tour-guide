@@ -21,6 +21,7 @@ class ContainersManagement {
     this.finalStepContainer = document.querySelector(".final-step");
     this.infoSheetContainer = document.querySelector(".travel-info-sheet");
     this.buttonContainer = document.querySelector(".step-choice-grid");
+    this.searchResultButton = document.querySelector('.final-step-button-view');
   }
 
   startSteps() {
@@ -78,7 +79,7 @@ class ContainersManagement {
     this.guide.stepsManager.displayStep(this.currentStep);
   }
 
-  navigateNextToFinalStep() {
+  async navigateNextToFinalStep() {
     this.guide.stepsManager.catchAnswer();
     this.guide.stepsManager.updateProgress((this.isFinal = true));
     this.guide.nextButtonState();
@@ -86,7 +87,14 @@ class ContainersManagement {
     this.finalStepContainer.style.display = "flex";
 
     this.guide.valuesGenerating.generateResults();
-    this.fetchEncryptedData(this.countryChoice, this.guide.valuesGenerating.getValues());
+    const values = this.guide.valuesGenerating.getValues();
+    try {
+      const link = await this.fetchEncryptedData(this.countryChoice, values);
+      this.searchResultButton.href = link;
+      console.log(link);
+    } catch (error) {
+      console.error("Error fetching encrypted data:", error);
+    }
   }
 
   updateLayoutGrid() {

@@ -7,7 +7,7 @@ export const priceManagement = [
                 values: [
                     {
                         id: "", 
-                        value: "0-700"
+                        value: "0-1400"
                     }
                 ]
             }
@@ -22,7 +22,7 @@ export const priceManagement = [
                 values: [
                     {
                         id: "", 
-                        value: "0-1000"
+                        value: "0-2000"
                     }
                 ]
             }
@@ -37,7 +37,7 @@ export const priceManagement = [
                 values: [
                     {
                         id: "", 
-                        value: "1000-10000000"
+                        value: "2000-10000000"
                     }
                 ]
             }

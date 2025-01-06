@@ -1,9 +1,6 @@
 class TravelGuide {
   static NEXT_BUTTON_FINAL_STEP = `
-    Paieška
-    <svg class="arrow-icon-next" width="21" height="21" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M3 6L8 11L13 6" stroke="#fff" stroke-linejoin="round"></path>
-    </svg>
+    Pabaiga
   `;
 
   static NEXT_BUTTON_DEFAULT_STEP = `
@@ -48,16 +45,24 @@ class TravelGuide {
   }
 
   attachNextButtonListener() {
-    this.attachButtonListener(this.nextBtn, () => {
-      this.containersManagement.handleNextButtonClick();
-    });
+    if (this.isFinal()) {
+      this.nextBtn.removeEventListener("click", this.nextBtn._handlerRef);
+      this.nextBtn._handlerRef = null;
+      this.nextBtn.classList.add("disabled");
+    } else {
+      this.attachButtonListener(this.nextBtn, () => {
+        this.containersManagement.handleNextButtonClick();
+      });
+    }
   }
 
   attachButtonListener(button, handler) {
     if (!button._handlerRef) {
       button._handlerRef = handler;
       button.addEventListener("click", (event) => {
-        this.applyButtonClickEffect(button);
+        if (!this.isFinal()) {
+          this.applyButtonClickEffect(button);
+        }
         handler(event);
       });
     }
@@ -72,15 +77,23 @@ class TravelGuide {
 
   nextButtonState() {
     const currentStep = this.containersManagement.getCurrentStep();
-    const isFinal = this.containersManagement.getIsFinal();
 
     const color = currentStep % 2 === 0 ? TravelGuide.BLUE_COLOR : TravelGuide.ORANGE_COLOR;
     this.nextBtn.style.backgroundColor = color;
 
-    if (isFinal) {
+    if (this.isFinal()) {
       this.nextBtn.innerHTML = TravelGuide.NEXT_BUTTON_FINAL_STEP;
+      this.finalButtonStateStyles();
     } else {
       this.nextBtn.innerHTML = TravelGuide.NEXT_BUTTON_DEFAULT_STEP;
     }
+  }
+
+  isFinal(){
+    return this.containersManagement.getIsFinal();
+  }
+
+  finalButtonStateStyles(){
+    this.nextBtn.style.paddingRight = "14px"
   }
 }

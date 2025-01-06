@@ -1,4 +1,4 @@
-const currentYear = new Date().getFullYear() + 1;
+const currentYear = new Date().getFullYear();
 
 export const seasonManagement = [
     {
