@@ -62,4 +62,19 @@ export const priceManagement = [
         ],
         providers: []
     },
+    {
+        value: "",
+        filterValues: [
+            {
+                type: 15,
+                values: [
+                    {
+                        id: "", 
+                        value: "0-10000000",
+                    }
+                ]
+            }
+        ],
+        providers: []
+    }
 ];

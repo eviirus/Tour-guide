@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
   guide.infoSheetManager = new InfoSheetManager(infoSheet);
   guide.containersManagement = new ContainersManagement(guide, steps, fetchEncryptedData);
   guide.valuesGenerating = new ValuesGenerating(guide, nightManagement, priceManagement, seasonManagement, travellerManagement);
+  guide.answersManagement = new AnswersManagement(guide);
 
   guide.initialize();
 });

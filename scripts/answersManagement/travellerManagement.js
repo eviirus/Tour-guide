@@ -58,5 +58,18 @@ export const travellerManagement = [
                 passengerType: 0
             }
         ]
+    },
+    {
+        value: "",
+        passengers: [
+            {
+                age: 20,
+                passengerType: 0
+            },
+            {
+                age: 20,
+                passengerType: 0
+            }
+        ]
     }
 ];

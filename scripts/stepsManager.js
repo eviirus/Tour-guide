@@ -3,13 +3,14 @@ class StepManager {
     this.guide = guide;
     this.travelGuide = travelGuide;
 
-    this.headingContainer = document.querySelector(".travel-help-step h2");
-    this.questionContainer = document.querySelector(".travel-help-step h3");
+    this.currentStepData = null;
 
     this.initializeDOMElements();
   }
 
   initializeDOMElements(){
+    this.headingContainer = document.querySelector(".travel-help-step h2");
+    this.questionContainer = document.querySelector(".travel-help-step h3");
     this.destinationAnswer = document.getElementById("destination");
     this.travelersAnswer = document.getElementById("traveler");
     this.dateAnswer = document.getElementById("date");
@@ -21,6 +22,8 @@ class StepManager {
   displayStep(stepIndex = 0) {
     const steps = this.guide.containersManagement.steps;
     const stepData = steps[stepIndex];
+
+    this.currentStepData = stepData;
 
     this.debug();
 
@@ -137,5 +140,9 @@ class StepManager {
       this.guide.containersManagement.answers[3];
     this.detailsAnswer.textContent =
       this.guide.containersManagement.answers[5];
+  }
+
+  getLayout(){
+    return this.currentStepData ? this.currentStepData.layout : null;
   }
 }

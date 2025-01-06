@@ -43,6 +43,10 @@ class ContainersManagement {
   }
 
   handleNextButtonClick() {
+    if(this.guide.stepsManager.getLayout() !== "grid" || this.guide.stepsManager.getLayout() !== "grid-two-columns"){
+      this.answers[this.currentStep] = "";
+    };
+
     if (this.currentStep < this.steps.length - 1) {
       this.navigateNextDefaultStep();
     } else if (this.currentStep === this.steps.length - 1) {
@@ -86,16 +90,18 @@ class ContainersManagement {
     this.stepContainer.style.display = "none";
     this.finalStepContainer.style.display = "flex";
 
-    this.guide.valuesGenerating.generateResults();
-    this.guide.valuesGenerating.getTravellerCount();
-    
-    const values = this.guide.valuesGenerating.getValues();
-    try {
-      const link = await this.fetchEncryptedData(this.countryChoice, values);
-      this.searchResultButton.href = link;
-      console.log(link);
-    } catch (error) {
-      console.error("Error fetching encrypted data:", error);
+    if(this.guide.answersManagement.isEmpty()){
+      this.guide.valuesGenerating.generateResults();
+      this.guide.valuesGenerating.getTravellerCount();
+  
+      const values = this.guide.valuesGenerating.getValues();
+      try {
+        const link = await this.fetchEncryptedData(this.countryChoice, values);
+        this.searchResultButton.href = link;
+        console.log(link);
+      } catch (error) {
+        console.error("Error fetching encrypted data:", error);
+      }
     }
   }
 
@@ -169,5 +175,9 @@ class ContainersManagement {
 
   getTravellerChoice() {
     return this.answers[3];
+  }
+
+  getCountryChoice(){
+    return this.countryChoice;
   }
 }
