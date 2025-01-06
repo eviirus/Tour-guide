@@ -34,8 +34,6 @@ class ValuesGenerating{
         const travellerDetail = this.travellerManagement.find(detail => detail.value === travellerChoice);
 
         this.travellerResult = travellerDetail ? travellerDetail.passengers : null;
-
-        this.getTravellerCount();
     }
 
     generatePriceResult(){
@@ -61,7 +59,6 @@ class ValuesGenerating{
         const travellerCount = this.travellerResult ? Object.keys(this.travellerResult).length : 0;
     
         localStorage.setItem("travellerCount", JSON.stringify({ travellerCount }));  
-        console.log("Item saved to localStorage:", { travellerCount });  
 
         setTravellerCount();
     }
