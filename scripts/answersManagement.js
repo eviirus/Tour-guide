@@ -1,5 +1,8 @@
 class AnswersManagement {
   static RED_COLOR = "#E4080A";
+  static ORANGE_COLOR = "#e84f03";
+  static BLACK_COLOR = "#000000";
+  static BLUE_COLOR = "#0093d9";
 
   constructor(guide) {
     this.guide = guide;
@@ -18,24 +21,28 @@ class AnswersManagement {
     this.searchButton.addEventListener("click", (event) => this.handleSearchButtonClick(event));
   }
 
+  checkIfEmpty() {
+    if (this.isEmpty()) {
+        this.markEmpty();
+        return true;
+    } else {
+        this.markEmpty();
+        return false;
+    }
+  }
+
   isEmpty() {
     if (
       this.guide.containersManagement.getCountryChoice() === "" ||
       this.guide.containersManagement.getNightChoice() === "" ||
       this.guide.containersManagement.getSeasonChoice() === ""
     ) {
+        console.log("isEmpty returning true");
         return true;
-    } else{
+    } else {
+        console.log("isEmpty returning false");
         return false;
     }
-  }
-
-  callFunction(){
-    console.log(this.isEmpty());
-    if(this.isEmpty()){
-      this.markEmpty();
-    }
-    
   }
 
   markEmpty() {
@@ -57,6 +64,8 @@ class AnswersManagement {
     fields.forEach((field) => {
       if (field.choice === "") {
         this.applyEmptyStyle(field.tag);
+      } else{
+        this.applyFilledStyle(field.tag);
       }
     });
 
@@ -68,25 +77,42 @@ class AnswersManagement {
     tag.style.textDecoration = "underline";
   }
 
-  changeTextContent() {
-    this.textContent.innerHTML = `Raudonai pažymėti laukeliai negali būti tušti.<br> Grįžkite atgal ir atsakykite į būtinus klausimus.`;
-    this.textContent.style.color = AnswersManagement.RED_COLOR;
+  applyFilledStyle(tag){
+    tag.style.color = AnswersManagement.ORANGE_COLOR;
+    tag.style.textDecoration = "none";
+  }
 
+  changeTextContent() {
+    if(this.isEmpty()){
+        this.textContent.innerHTML = `Raudonai pažymėti laukeliai negali būti tušti.<br> Grįžkite atgal ir atsakykite į būtinus klausimus.`;
+        this.textContent.style.color = AnswersManagement.RED_COLOR;
+    } else{
+        this.textContent.innerHTML = `Peržiūrėkite galimus variantus.<br>Jeigu rezultatų nėra arba jums nepatiko, siūlome susisiekti su mumis - padėsime sukurti kėlionę!`;
+        this.textContent.style.color = AnswersManagement.BLACK_COLOR;
+    }
+    
     this.applyStylesForButtons();
   }
 
   applyStylesForButtons() { 
-    this.nextBtn.style.backgroundColor = AnswersManagement.RED_COLOR;
-    this.searchButton.style.backgroundColor = AnswersManagement.RED_COLOR;
+    if(this.isEmpty()){
+        this.nextBtn.style.backgroundColor = AnswersManagement.RED_COLOR;
+        this.searchButton.style.backgroundColor = AnswersManagement.RED_COLOR;
+    } else{
+        this.nextBtn.style.backgroundColor = AnswersManagement.BLUE_COLOR;
+        this.searchButton.style.backgroundColor = AnswersManagement.BLUE_COLOR;
+    }
   }
 
   handleSearchButtonClick(event) {
-    event.preventDefault();
+    if(this.isEmpty()){
+        event.preventDefault();
 
-    this.searchButton.classList.add("shake");
-
-    setTimeout(() => {
-        this.searchButton.classList.remove("shake");
-    }, 500);
+        this.searchButton.classList.add("shake");
+    
+        setTimeout(() => {
+            this.searchButton.classList.remove("shake");
+        }, 500);
+    }
   }
 }

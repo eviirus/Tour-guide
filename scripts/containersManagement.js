@@ -90,7 +90,7 @@ class ContainersManagement {
     this.stepContainer.style.display = "none";
     this.finalStepContainer.style.display = "flex";
 
-    if(this.guide.answersManagement.isEmpty()){
+    if(!this.guide.answersManagement.checkIfEmpty()){
       this.guide.valuesGenerating.generateResults();
       this.guide.valuesGenerating.getTravellerCount();
   
