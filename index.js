@@ -5,6 +5,7 @@ import { priceManagement } from "./scripts/answersManagement/priceManagement.js"
 import { seasonManagement } from "./scripts/answersManagement/seasonManagement.js";
 import { travellerManagement } from "./scripts/answersManagement/travellerManagement.js";
 import { fetchEncryptedData } from "./scripts/searchResultGenerating.js";
+import ValuesGenerating from "./scripts/valuesGenerating.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const guide = new TravelGuide(steps);

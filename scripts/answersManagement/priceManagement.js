@@ -1,3 +1,21 @@
+let multiplier = 2;
+
+export function setTravellerCount() {
+    let travellerCount = 2;
+
+    try {
+        const data = localStorage.getItem('travellerCount');
+        if (data) {
+            const json = JSON.parse(data);
+            travellerCount = json.travellerCount || 2;
+        }
+    } catch (error) {
+        console.error("Error reading traveller count from localStorage:", error);
+    }
+
+    multiplier = travellerCount;
+}
+
 export const priceManagement = [
     {
         value: "iki 700€ asm.",
@@ -7,7 +25,7 @@ export const priceManagement = [
                 values: [
                     {
                         id: "", 
-                        value: "0-1400"
+                        value: `0-${multiplier * 700}`
                     }
                 ]
             }
@@ -22,7 +40,7 @@ export const priceManagement = [
                 values: [
                     {
                         id: "", 
-                        value: "0-2000"
+                        value: `0-${multiplier * 1000}`
                     }
                 ]
             }
@@ -37,7 +55,7 @@ export const priceManagement = [
                 values: [
                     {
                         id: "", 
-                        value: "2000-10000000"
+                        value: `${multiplier * 1000}-10000000`
                     }
                 ]
             }

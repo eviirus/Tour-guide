@@ -87,6 +87,8 @@ class ContainersManagement {
     this.finalStepContainer.style.display = "flex";
 
     this.guide.valuesGenerating.generateResults();
+    this.guide.valuesGenerating.getTravellerCount();
+    
     const values = this.guide.valuesGenerating.getValues();
     try {
       const link = await this.fetchEncryptedData(this.countryChoice, values);
