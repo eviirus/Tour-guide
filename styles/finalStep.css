@@ -73,7 +73,7 @@
 .final-step-button-contact{
   font-weight: 600;
   font-size: 16px;
-  color: #fff;
+  color: #fff !important;
   background-color: #0093d0;
   line-height: 1;
   border-radius: 0.5em;
@@ -85,7 +85,7 @@
   justify-content: center;
   border: 0;
   cursor: pointer;
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 .final-step-button-contact {
