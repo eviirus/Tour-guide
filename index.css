@@ -5,6 +5,7 @@
   position: relative;
   box-sizing: border-box;
   margin: 40px 0;
+  overflow: hidden;
 }
 
 .travel-help-banner-carousel {
@@ -51,6 +52,12 @@
   align-items: center;
   justify-content: center;
   gap: 1em;
+  opacity: 1;
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.travel-help-intro.transform{
+  transform: translateX(-405px);
 }
 
 .travel-help-intro h2 {

@@ -17,6 +17,7 @@
   align-items: center;
   justify-content: center;
   gap: 1em;
+  transition: transform 1s ease, opacity 1s ease;
 }
 
 .travel-help-step.grid {

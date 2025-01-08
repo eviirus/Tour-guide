@@ -25,11 +25,40 @@ class ContainersManagement {
   }
 
   startSteps() {
-    this.introContainer.style.display = "none";
+    this.applyStartEffects();
+
+    this.guide.stepsManager.displayStep();
+  }
+
+  applyStartEffects(){
+    this.introContainer.style.opacity = "0";
+
+    this.introContainer.classList.add("transform");
+
     this.stepContainer.style.display = "flex";
     this.progressBar.style.display = "flex";
 
-    this.guide.stepsManager.displayStep();
+    this.stepContainer.style.transform = "translateX(100%)";
+    this.stepContainer.style.opacity = "0";
+
+    this.progressBar.style.transform = "translateX(-100%)";
+    this.progressBar.style.opacity = "0";
+
+    setTimeout(() => {
+      this.introContainer.style.display = "none";
+
+      this.stepContainer.style.transform = "translateX(0)"
+      this.stepContainer.style.opacity = "1";
+
+      this.progressBar.style.transform = "translateX(0)";
+      this.progressBar.style.opacity = "1";
+
+      this.introContainer.classList.remove("transform");
+    }, 700)
+
+    setTimeout(() => {
+      this.introContainer.style.opacity = "1";
+    }, 800)
   }
 
   handlePreviousButtonClick() {

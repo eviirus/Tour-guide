@@ -37,10 +37,8 @@ class AnswersManagement {
       this.guide.containersManagement.getNightChoice() === "" ||
       this.guide.containersManagement.getSeasonChoice() === ""
     ) {
-        console.log("isEmpty returning true");
         return true;
     } else {
-        console.log("isEmpty returning false");
         return false;
     }
   }
