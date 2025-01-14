@@ -22,7 +22,6 @@ export const steps = [
       "Graikija",
       "Juodkalnija",
       "Ispanija",
-      "Tunisas",
       "Turkija",
       "Tailandas",
       "Vietnamas",

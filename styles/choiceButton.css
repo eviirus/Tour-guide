@@ -84,10 +84,6 @@
   }
 }
 
-.choice-button.grid:nth-child(7) {
-  grid-column: span 3;
-}
-
 .choice-button:hover .button-img {
   filter: brightness(0) invert(1);
 }
