@@ -17,7 +17,11 @@
   align-items: center;
   justify-content: center;
   gap: 1em;
-  transition: transform 1s ease, opacity 1s ease;
+  transition: opacity 1s ease, height 1s ease;
+}
+
+.travel-help-intro-content{
+  transition: transform 1s ease;
 }
 
 .travel-help-step.grid {

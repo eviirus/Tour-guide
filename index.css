@@ -26,7 +26,40 @@
   width: 100%;
   height: 100%;
   border-radius: 24px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 1s ease, opacity 1s ease;
 }
+
+.travel-help-banner-carousel img.slide-out {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+.travel-help-banner-carousel img.slide-in {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.travel-help-banner-carousel img.hidden {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+/* .travel-help-banner-carousel img.fade-out {
+  animation: fadeOut 1s forwards;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+} */
 
 .travel-help-choice-window {
   max-width: 40%;
@@ -53,11 +86,7 @@
   justify-content: center;
   gap: 1em;
   opacity: 1;
-  transition: opacity 1s ease, transform 1s ease;
-}
-
-.travel-help-intro.transform{
-  transform: translateX(-405px);
+  transition: height 1s ease;
 }
 
 .travel-help-intro h2 {
@@ -77,7 +106,7 @@
   align-items: stretch;
 }
 
-.intro-start-button{
+.intro-start-button {
   font-weight: 700;
   font-size: 20px;
   color: #fff;
@@ -100,28 +129,6 @@
   height: 13px;
 }
 
-.banner-carousel img {
-  opacity: 1;
-  /* Initial state of the image */
-}
-
-.banner-carousel.fade-out img {
-  animation: fadeOut 1s forwards;
-  /* Fade out over 1 second */
-}
-
-@keyframes fadeOut {
-  0% {
-    opacity: 1;
-    /* Fully visible */
-  }
-
-  100% {
-    opacity: 0;
-    /* Fully invisible */
-  }
-}
-
 @media (max-width: 1300px) {
   .travel-help-choice-window {
     max-width: 440px;
@@ -137,7 +144,7 @@
     font-size: 16px;
   }
 
-  .intro-start-button{
+  .intro-start-button {
     font-size: 14px;
   }
 }
@@ -169,6 +176,7 @@
     grid-template-rows: auto 1fr;
     grid-template-columns: 1fr;
     position: relative;
+    overflow: visible;
   }
 
   .travel-help-banner-carousel img {

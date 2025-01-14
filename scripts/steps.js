@@ -4,14 +4,14 @@ export const steps = [
     question: "Kada norėtumėte keliauti?",
     choices: ["Vasarą", "Rudenį", "Žiemą", "Pavasarį"],
     layout: null,
-    img: "https://b2ccdn.coraltravel.lt/content/Travel in June.jpg",
+    //img: "https://b2ccdn.coraltravel.lt/content/Travel in June.jpg",
   },
   {
     heading: "Gerai!",
     question: "Kokia kelionės trukmė Jums aktuali?",
     choices: ["3 - 5 naktys", "6 - 9 naktys", "10 - 12 naktų", "14 ir daugiau"],
     layout: null,
-    img: "https://b2ccdn.coraltravel.lt/content/Kelionės rugsėjo mėnesį.jpg",
+    //img: "https://b2ccdn.coraltravel.lt/content/Kelionės rugsėjo mėnesį.jpg",
   },
   {
     heading: "",
@@ -29,7 +29,7 @@ export const steps = [
       "Dominikos Respublika",
     ],
     layout: "grid",
-    img: "https://b2ccdn.coraltravel.lt/content/Kelionės gegužės mėnesį.jpg",
+    //img: "https://b2ccdn.coraltravel.lt/content/Kelionės gegužės mėnesį.jpg",
   },
   {
     heading: "Pasitikslinkime detales",

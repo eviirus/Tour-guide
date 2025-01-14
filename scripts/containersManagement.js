@@ -15,6 +15,7 @@ class ContainersManagement {
 
   initializeDOMElements(){
     this.introContainer = document.querySelector(".travel-help-intro");
+    this.introContent = document.querySelector(".travel-help-intro-content");
     this.stepContainer = document.querySelector(".travel-help-step");
     this.progressBar = document.querySelector(".travel-help-step-progress");
     this.bannerCarousel = document.querySelector(".banner-carousel");
@@ -25,40 +26,10 @@ class ContainersManagement {
   }
 
   startSteps() {
-    this.applyStartEffects();
+    this.guide.guideEffects.applyStartEffects();
 
     this.guide.stepsManager.displayStep();
-  }
-
-  applyStartEffects(){
-    this.introContainer.style.opacity = "0";
-
-    this.introContainer.classList.add("transform");
-
-    this.stepContainer.style.display = "flex";
-    this.progressBar.style.display = "flex";
-
-    this.stepContainer.style.transform = "translateX(100%)";
-    this.stepContainer.style.opacity = "0";
-
-    this.progressBar.style.transform = "translateX(-100%)";
-    this.progressBar.style.opacity = "0";
-
-    setTimeout(() => {
-      this.introContainer.style.display = "none";
-
-      this.stepContainer.style.transform = "translateX(0)"
-      this.stepContainer.style.opacity = "1";
-
-      this.progressBar.style.transform = "translateX(0)";
-      this.progressBar.style.opacity = "1";
-
-      this.introContainer.classList.remove("transform");
-    }, 700)
-
-    setTimeout(() => {
-      this.introContainer.style.opacity = "1";
-    }, 800)
+    this.guide.guideEffects.applyBannerCarouselEffects();
   }
 
   handlePreviousButtonClick() {
@@ -89,11 +60,13 @@ class ContainersManagement {
     this.guide.stepsManager.displayStep(this.currentStep);
     this.isFinal = false;
     this.guide.nextButtonState();
+    this.guide.guideEffects.applyBannerCarouselEffects();
   }
 
   navigatePrevDefaultStep() {
     this.currentStep--;
     this.guide.stepsManager.displayStep(this.currentStep);
+    this.guide.guideEffects.applyBannerCarouselEffects();
   }
 
   navigatePrevToIntro() {
@@ -105,11 +78,13 @@ class ContainersManagement {
     this.answers = [];
     this.currentStep = 0;
     this.countryChoice = "";
+    this.guide.guideEffects.applyBannerCarouselEffects();
   }
 
   navigateNextDefaultStep() {
     this.currentStep++;
     this.guide.stepsManager.displayStep(this.currentStep);
+    this.guide.guideEffects.applyBannerCarouselEffects();
   }
 
   async navigateNextToFinalStep() {
@@ -132,6 +107,8 @@ class ContainersManagement {
         console.error("Error fetching encrypted data:", error);
       }
     }
+
+    this.guide.guideEffects.applyBannerCarouselEffects();
   }
 
   updateLayoutGrid() {
@@ -180,6 +157,7 @@ class ContainersManagement {
     this.answers[this.currentStep] = choice;
     this.currentStep++;
     this.guide.stepsManager.displayStep(this.currentStep);
+    this.guide.guideEffects.applyBannerCarouselEffects();
   }
 
   getCurrentStep() {

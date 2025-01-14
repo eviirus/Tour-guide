@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
   guide.containersManagement = new ContainersManagement(guide, steps, fetchEncryptedData);
   guide.valuesGenerating = new ValuesGenerating(guide, nightManagement, priceManagement, seasonManagement, travellerManagement);
   guide.answersManagement = new AnswersManagement(guide);
+  guide.guideEffects = new GuideEffects(guide);
 
   guide.initialize();
 });
