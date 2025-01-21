@@ -32,7 +32,6 @@ class StepManager {
     this.headingContainer.textContent = stepData.heading;
     this.questionContainer.textContent = stepData.question;
     this.guide.containersManagement.buttonContainer.innerHTML = "";
-    this.updateBanner(stepData.img);
 
     stepData.choices.forEach((choice) =>
       this.createChoiceButton(choice, stepData)
@@ -64,12 +63,6 @@ class StepManager {
       () => this.guide.containersManagement.updateLayoutGridTwoCol(),
       () => this.guide.containersManagement.updateLayoutNoCol()
     );
-  }
-
-  updateBanner(imgSrc) {
-    this.guide.containersManagement.bannerCarousel.parentElement.classList.add("fade-out");
-    this.guide.containersManagement.bannerCarousel.src = imgSrc;
-    this.guide.containersManagement.bannerCarousel.parentElement.classList.remove("fade-out");
   }
 
   createChoiceButton(choice, stepData) {

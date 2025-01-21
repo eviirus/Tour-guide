@@ -29,37 +29,22 @@
   position: absolute;
   top: 0;
   left: 0;
-  transition: transform 1s ease, opacity 1s ease;
+  transition: transform 1s ease;
 }
 
-.travel-help-banner-carousel img.slide-out {
-  transform: translateX(-100%);
-  opacity: 0;
-}
-
-.travel-help-banner-carousel img.slide-in {
-  transform: translateX(0);
-  opacity: 1;
-}
-
-.travel-help-banner-carousel img.hidden {
+.travel-help-banner-carousel img.next{
   transform: translateX(100%);
-  opacity: 0;
+  z-index: 2;
 }
 
-/* .travel-help-banner-carousel img.fade-out {
-  animation: fadeOut 1s forwards;
+.travel-help-banner-carousel img.current{
+  transform: translateX(0);
+  z-index: 1;
 }
 
-@keyframes fadeOut {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-} */
+.travel-help-banner-carousel img.prev{
+  z-index: -1;
+}
 
 .travel-help-choice-window {
   max-width: 40%;

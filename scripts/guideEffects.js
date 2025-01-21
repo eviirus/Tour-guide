@@ -10,11 +10,6 @@ class GuideEffects {
     this.introContent = document.querySelector(".travel-help-intro-content");
     this.stepContainer = document.querySelector(".travel-help-step");
     this.progressBar = document.querySelector(".travel-help-step-progress");
-    this.bannerCarousel = document.querySelector(".banner-carousel");
-    this.finalStepContainer = document.querySelector(".final-step");
-    this.infoSheetContainer = document.querySelector(".travel-info-sheet");
-    this.buttonContainer = document.querySelector(".step-choice-grid");
-    this.searchResultButton = document.querySelector(".final-step-button-view");
   }
 
   applyStartEffects() {
@@ -39,7 +34,7 @@ class GuideEffects {
 
       this.stepContainer.style.height = "80%";
       this.progressBar.style.height = "66px";
-    }, 700);
+    }, 500);
 
     setTimeout(() => {
       this.introContainer.style.height = "100%";
@@ -47,31 +42,31 @@ class GuideEffects {
     }, 800);
   }
 
-  applyBannerCarouselEffects() {
-    // this.bannerCarousel.classList.add("fade-out");
+  applyBannerCarouselEffectsForward() {
+    const images = Array.from(document.querySelectorAll(".travel-help-banner-carousel img"));
 
-    // setTimeout(() => {
-    //   this.bannerCarousel.style.opacity = "1";
-    //   this.bannerCarousel.classList.remove("fade-out")
-    // }, 1000)
-
-    const images = document.querySelectorAll(
-      ".travel-help-banner-carousel img"
-    );
-    let currentIndex = Array.from(images).findIndex((img) =>
-      img.classList.contains("slide-in")
+    let currentIndex = images.findIndex((img) =>
+        img.classList.contains("current")
     );
 
-    images[currentIndex].classList.add("slide-out");
-    images[currentIndex].classList.remove("slide-in");
+    images[currentIndex].classList.remove("current");
+    images[currentIndex].classList.add("prev");
 
-    setTimeout(() => {
-      images[currentIndex].classList.add("hidden");
-      images[currentIndex].classList.remove("slide-out");
+    images[currentIndex + 1].classList.remove("next");
+    images[currentIndex + 1].classList.add("current");
+  }
 
-      currentIndex = (currentIndex + 1) % images.length;
-      images[currentIndex].classList.remove("hidden");
-      images[currentIndex].classList.add("slide-in");
-    }, 0);
+  applyBannerCarouselEffectsBackward() {
+    const images = Array.from(document.querySelectorAll(".travel-help-banner-carousel img"));
+
+    let currentIndex = images.findIndex((img) =>
+        img.classList.contains("current")
+    );
+
+    images[currentIndex].classList.remove("current");
+    images[currentIndex].classList.add("next");
+
+    images[currentIndex - 1].classList.remove("prev");
+    images[currentIndex - 1].classList.add("current");
   }
 }

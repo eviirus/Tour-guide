@@ -4,14 +4,12 @@ export const steps = [
     question: "Kada norėtumėte keliauti?",
     choices: ["Vasarą", "Rudenį", "Žiemą", "Pavasarį"],
     layout: null,
-    //img: "https://b2ccdn.coraltravel.lt/content/Travel in June.jpg",
   },
   {
     heading: "Gerai!",
     question: "Kokia kelionės trukmė Jums aktuali?",
     choices: ["3 - 5 naktys", "6 - 9 naktys", "10 - 12 naktų", "14 ir daugiau"],
     layout: null,
-    //img: "https://b2ccdn.coraltravel.lt/content/Kelionės rugsėjo mėnesį.jpg",
   },
   {
     heading: "",
@@ -28,28 +26,24 @@ export const steps = [
       "Dominikos Respublika",
     ],
     layout: "grid",
-    //img: "https://b2ccdn.coraltravel.lt/content/Kelionės gegužės mėnesį.jpg",
   },
   {
     heading: "Pasitikslinkime detales",
     question: "Su kuo keliausite?",
     choices: ["Vienas (-a)", "Su partneriu", "Su šeima", "Su draugais"],
     layout: null,
-    img: "https://b2ccdn.coraltravel.lt/content/Paskutinės minutės kelionės į Dubajų.jpg",
   },
   {
     heading: "Gerai!",
     question: "Kokį biudžetą planuojate skirti kelionei?",
     choices: ["iki 700€ asm.", "iki 1000€ asm.", "virš 1000€ asm."],
     layout: null,
-    img: "https://b2ccdn.coraltravel.lt/content/Kelionės gegužės mėnesį.jpg",
   },
   {
     heading: "Nuostabu!",
-    question: "Kokio poilsio norėtumėte?",
-    choices: ["Aktyvaus", "Ramaus", "Šeimai ", "Prabangaus"],
+    question: "Pasirinkite viešbučio kategoriją",
+    choices: ["4 - 5*", "2 - 3*", "1* ", "Apartamentai"],
     layout: null,
-    img: "https://b2ccdn.coraltravel.lt/content/Kelionės rugpjūčio mėnesį.jpg",
   },
   {
     heading: "Puiku!",
@@ -66,6 +60,5 @@ export const steps = [
       "Elite viešbučiai",
     ],
     layout: "grid-two-col",
-    img: "https://b2ccdn.coraltravel.lt/content/Kelionės per Velykas.jpg",
   },
 ];

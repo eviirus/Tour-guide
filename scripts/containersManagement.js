@@ -15,10 +15,8 @@ class ContainersManagement {
 
   initializeDOMElements(){
     this.introContainer = document.querySelector(".travel-help-intro");
-    this.introContent = document.querySelector(".travel-help-intro-content");
     this.stepContainer = document.querySelector(".travel-help-step");
     this.progressBar = document.querySelector(".travel-help-step-progress");
-    this.bannerCarousel = document.querySelector(".banner-carousel");
     this.finalStepContainer = document.querySelector(".final-step");
     this.infoSheetContainer = document.querySelector(".travel-info-sheet");
     this.buttonContainer = document.querySelector(".step-choice-grid");
@@ -29,7 +27,7 @@ class ContainersManagement {
     this.guide.guideEffects.applyStartEffects();
 
     this.guide.stepsManager.displayStep();
-    this.guide.guideEffects.applyBannerCarouselEffects();
+    this.guide.guideEffects.applyBannerCarouselEffectsForward();
   }
 
   handlePreviousButtonClick() {
@@ -60,31 +58,29 @@ class ContainersManagement {
     this.guide.stepsManager.displayStep(this.currentStep);
     this.isFinal = false;
     this.guide.nextButtonState();
-    this.guide.guideEffects.applyBannerCarouselEffects();
+    this.guide.guideEffects.applyBannerCarouselEffectsBackward();
   }
 
   navigatePrevDefaultStep() {
     this.currentStep--;
     this.guide.stepsManager.displayStep(this.currentStep);
-    this.guide.guideEffects.applyBannerCarouselEffects();
+    this.guide.guideEffects.applyBannerCarouselEffectsBackward();
   }
 
   navigatePrevToIntro() {
-    this.bannerCarousel.src =
-      "https://b2ccdn.coraltravel.lt/content/Travel%20in%20January.jpg";
     this.introContainer.style.display = "flex";
     this.stepContainer.style.display = "none";
     this.progressBar.style.display = "none";
     this.answers = [];
     this.currentStep = 0;
     this.countryChoice = "";
-    this.guide.guideEffects.applyBannerCarouselEffects();
+    this.guide.guideEffects.applyBannerCarouselEffectsBackward();
   }
 
   navigateNextDefaultStep() {
     this.currentStep++;
     this.guide.stepsManager.displayStep(this.currentStep);
-    this.guide.guideEffects.applyBannerCarouselEffects();
+    this.guide.guideEffects.applyBannerCarouselEffectsForward();
   }
 
   async navigateNextToFinalStep() {
@@ -108,7 +104,7 @@ class ContainersManagement {
       }
     }
 
-    this.guide.guideEffects.applyBannerCarouselEffects();
+    this.guide.guideEffects.applyBannerCarouselEffectsForward();
   }
 
   updateLayoutGrid() {
@@ -157,7 +153,7 @@ class ContainersManagement {
     this.answers[this.currentStep] = choice;
     this.currentStep++;
     this.guide.stepsManager.displayStep(this.currentStep);
-    this.guide.guideEffects.applyBannerCarouselEffects();
+    this.guide.guideEffects.applyBannerCarouselEffectsForward();
   }
 
   getCurrentStep() {
