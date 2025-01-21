@@ -14,9 +14,9 @@ class StepManager {
     this.destinationAnswer = document.getElementById("destination");
     this.travelersAnswer = document.getElementById("traveler");
     this.dateAnswer = document.getElementById("date");
-    this.detailsAnswer = document.getElementById("details");
     this.budgetAnswer = document.getElementById("budget");
     this.seasonAnswer = document.getElementById("season");
+    this.hotelAnswer = document.getElementById("hotel");
   }
 
   displayStep(stepIndex = 0) {
@@ -131,7 +131,7 @@ class StepManager {
       this.guide.containersManagement.answers[1];
     this.travelersAnswer.textContent =
       this.guide.containersManagement.answers[3];
-    this.detailsAnswer.textContent =
+    this.hotelAnswer.textContent =
       this.guide.containersManagement.answers[5];
   }
 

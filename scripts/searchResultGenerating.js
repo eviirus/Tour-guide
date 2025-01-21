@@ -6,7 +6,7 @@ export async function fetchEncryptedData(selectedCountry, values) {
     if (!countryDetail) {
         throw new Error(`Country details for ${selectedCountry} not found`);
     }
-
+    
     const payload = {
         beginDates: values.seasonResult,
         arrivalLocations: countryDetail.arrivalLocation.map(location => ({
@@ -56,7 +56,22 @@ export async function fetchEncryptedData(selectedCountry, values) {
             pageSize: 20,
             sortType: 0
         },
-        additionalFilters: values.priceResult,
+         
+        additionalFilters: [
+            {
+                "type": 21,
+                "values": [
+                  {
+                    "id": "2",
+                    "value": "2",
+                    "parent": null
+                  }
+                ],
+                "providers": null
+            },
+            values.priceResult,
+            values.hotelCategoryResult
+        ],
         imageSizes: [0],
         flightType: 2
     };

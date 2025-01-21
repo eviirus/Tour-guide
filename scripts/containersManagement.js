@@ -183,4 +183,8 @@ class ContainersManagement {
   getCountryChoice(){
     return this.countryChoice;
   }
+
+  getHotelCategoryChoice(){
+    return this.answers[5];
+  }
 }

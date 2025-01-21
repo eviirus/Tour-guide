@@ -4,6 +4,7 @@ import { nightManagement } from "./scripts/answersManagement/nightManagement.js"
 import { priceManagement } from "./scripts/answersManagement/priceManagement.js";
 import { seasonManagement } from "./scripts/answersManagement/seasonManagement.js";
 import { travellerManagement } from "./scripts/answersManagement/travellerManagement.js";
+import { hotelCategoryManagement } from "./scripts/answersManagement/hotelCategoryManagement.js";
 import { fetchEncryptedData } from "./scripts/searchResultGenerating.js";
 import ValuesGenerating from "./scripts/valuesGenerating.js";
 
@@ -13,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
   guide.stepsManager = new StepManager(guide);
   guide.infoSheetManager = new InfoSheetManager(infoSheet);
   guide.containersManagement = new ContainersManagement(guide, steps, fetchEncryptedData);
-  guide.valuesGenerating = new ValuesGenerating(guide, nightManagement, priceManagement, seasonManagement, travellerManagement);
+  guide.valuesGenerating = new ValuesGenerating(guide, nightManagement, priceManagement, seasonManagement, travellerManagement, hotelCategoryManagement);
   guide.answersManagement = new AnswersManagement(guide);
   guide.guideEffects = new GuideEffects(guide);
 

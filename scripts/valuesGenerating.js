@@ -1,18 +1,20 @@
 import { setTravellerCount } from './answersManagement/priceManagement.js';
 
 class ValuesGenerating{
-    constructor(guide, nightManagement, priceManagement, seasonManagement, travellerManagement){
+    constructor(guide, nightManagement, priceManagement, seasonManagement, travellerManagement, hotelCategoryManagement){
         this.guide = guide;
 
         this.nightManagement = nightManagement;
         this.travellerManagement = travellerManagement;
         this.seasonManagement = seasonManagement;
         this.priceManagement = priceManagement;
+        this.hotelCategoryManagement = hotelCategoryManagement;
 
         this.nightResult = null;
         this.travellerResult = null;
         this.seasonResult = null;
         this.priceResult = null;
+        this.hotelCategoryResult = null;
     }
 
     generateResults(){
@@ -20,6 +22,7 @@ class ValuesGenerating{
         this.generateTravellerResult();
         this.generatePriceResult();
         this.generateSeasonResult();
+        this.generateHotelCategoryManagement();
     }
 
     generateNightResult(){
@@ -48,6 +51,13 @@ class ValuesGenerating{
         const seasonDetail = this.seasonManagement.find(detail => detail.season === seasonChoice);
 
         this.seasonResult = seasonDetail ? seasonDetail.beginDates : null;
+    }
+
+    generateHotelCategoryManagement(){
+        const hotelCategoryChoice = this.guide.containersManagement.getHotelCategoryChoice();
+        const hotelCategoryDetail = this.hotelCategoryManagement.find(detail => detail.value === hotelCategoryChoice);
+
+        this.hotelCategoryResult = hotelCategoryDetail ? hotelCategoryDetail.filterValues : null;
     }
 
     getTravellerCount(){
@@ -79,12 +89,17 @@ class ValuesGenerating{
         return this.travellerResult;
     }
 
+    getHotelCategoryResult(){
+        return this.hotelCategoryResult;
+    }
+
     getValues(){
         return {
             nightResult: this.getNightResult(),
             priceResult: this.getPriceResult(),
             seasonResult: this.getSeasonResult(),
-            travellerResult: this.getTravellerResult()
+            travellerResult: this.getTravellerResult(),
+            hotelCategoryResult: this.getHotelCategoryResult()
         };
     }
 }
