@@ -17,6 +17,7 @@ class StepManager {
     this.budgetAnswer = document.getElementById("budget");
     this.seasonAnswer = document.getElementById("season");
     this.hotelAnswer = document.getElementById("hotel");
+    this.hotelConceptAnswer = document.getElementById("hotelConcept");
   }
 
   displayStep(stepIndex = 0) {
@@ -51,6 +52,7 @@ class StepManager {
     console.log(
       "Country choice: " + this.guide.containersManagement.countryChoice
     );
+    console.log("Hotel concept choice: " + this.guide.containersManagement.hotelConceptChoice);
   }
 
   setLayout(stepData) {
@@ -133,6 +135,8 @@ class StepManager {
       this.guide.containersManagement.answers[3];
     this.hotelAnswer.textContent =
       this.guide.containersManagement.answers[5];
+    this.hotelConceptAnswer.textContent = 
+      this.guide.containersManagement.hotelConceptChoice;
   }
 
   getLayout(){

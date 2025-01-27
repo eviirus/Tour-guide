@@ -1,11 +1,43 @@
 import { countryDetails } from "./answersManagement/countryDetails.js";
 
+function createAdditionalFilters(values) {
+    const filters = [];
+  
+    filters.push({
+      "type": 21,
+      "values": [
+        {
+          "id": "2",
+          "value": "2",
+          "parent": null
+        }
+      ],
+      "providers": null
+    });
+  
+    if (values.hotelCategoryResult && values.hotelCategoryResult.values && values.hotelCategoryResult.values.length > 0) {
+      filters.push(values.hotelCategoryResult);
+    }
+  
+    if (values.priceResult && values.priceResult.values && values.priceResult.values.length > 0) {
+      filters.push(values.priceResult);
+    }
+  
+    if (values.hotelConceptResult && values.hotelConceptResult.values && values.hotelConceptResult.values.length > 0) {
+      filters.push(values.hotelConceptResult);
+    }
+  
+    return filters;
+  }
+
 export async function fetchEncryptedData(selectedCountry, values) {
     const countryDetail = countryDetails.find(detail => detail.userSelected === selectedCountry);
 
     if (!countryDetail) {
         throw new Error(`Country details for ${selectedCountry} not found`);
     }
+
+    const mergedFilters = createAdditionalFilters(values);
     
     const payload = {
         beginDates: values.seasonResult,
@@ -57,21 +89,7 @@ export async function fetchEncryptedData(selectedCountry, values) {
             sortType: 0
         },
          
-        additionalFilters: [
-            {
-                "type": 21,
-                "values": [
-                  {
-                    "id": "2",
-                    "value": "2",
-                    "parent": null
-                  }
-                ],
-                "providers": null
-            },
-            values.priceResult,
-            values.hotelCategoryResult
-        ],
+        additionalFilters: mergedFilters,
         imageSizes: [0],
         flightType: 2
     };

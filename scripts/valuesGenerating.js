@@ -1,7 +1,7 @@
 import { setTravellerCount } from './answersManagement/priceManagement.js';
 
 class ValuesGenerating{
-    constructor(guide, nightManagement, priceManagement, seasonManagement, travellerManagement, hotelCategoryManagement){
+    constructor(guide, nightManagement, priceManagement, seasonManagement, travellerManagement, hotelCategoryManagement, hotelConceptManagement){
         this.guide = guide;
 
         this.nightManagement = nightManagement;
@@ -9,12 +9,14 @@ class ValuesGenerating{
         this.seasonManagement = seasonManagement;
         this.priceManagement = priceManagement;
         this.hotelCategoryManagement = hotelCategoryManagement;
+        this.hotelConceptManagement = hotelConceptManagement;
 
         this.nightResult = null;
         this.travellerResult = null;
         this.seasonResult = null;
         this.priceResult = null;
         this.hotelCategoryResult = null;
+        this.hotelConceptResult = null;
     }
 
     generateResults(){
@@ -23,6 +25,7 @@ class ValuesGenerating{
         this.generatePriceResult();
         this.generateSeasonResult();
         this.generateHotelCategoryManagement();
+        this.generateHotelConceptManagement();
     }
 
     generateNightResult(){
@@ -60,6 +63,13 @@ class ValuesGenerating{
         this.hotelCategoryResult = hotelCategoryDetail ? hotelCategoryDetail.filterValues : null;
     }
 
+    generateHotelConceptManagement(){
+        const hotelConceptChoice = this.guide.containersManagement.getHotelConceptChoice();
+        const hotelConceptDetail = this.hotelConceptManagement.find(detail => detail.value === hotelConceptChoice);
+
+        this.hotelConceptResult = hotelConceptDetail ? hotelConceptDetail.filterValues : null;
+    }
+
     getTravellerCount(){
         const travellerChoice = this.guide.containersManagement.getTravellerChoice();
         const travellerDetail = this.travellerManagement.find(detail => detail.value === travellerChoice);
@@ -93,13 +103,18 @@ class ValuesGenerating{
         return this.hotelCategoryResult;
     }
 
+    getHotelConceptResult(){
+        return this.hotelConceptResult;
+    }
+
     getValues(){
         return {
             nightResult: this.getNightResult(),
             priceResult: this.getPriceResult(),
             seasonResult: this.getSeasonResult(),
             travellerResult: this.getTravellerResult(),
-            hotelCategoryResult: this.getHotelCategoryResult()
+            hotelCategoryResult: this.getHotelCategoryResult(),
+            hotelConceptResult: this.getHotelConceptResult()
         };
     }
 }

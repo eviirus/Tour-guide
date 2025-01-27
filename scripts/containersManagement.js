@@ -7,6 +7,7 @@ class ContainersManagement {
     this.currentStep = 0;
     this.steps = steps;
     this.countryChoice = "";
+    this.hotelConceptChoice = "";
 
     this.fetchEncryptedData = fetchEncryptedData;
 
@@ -145,7 +146,8 @@ class ContainersManagement {
         .forEach((btn) => btn.classList.remove("selected"));
 
       button.classList.add("selected");
-      this.answers[this.currentStep] = choice;
+      
+      this.hotelConceptChoice = choice;
     }
   }
 
@@ -186,5 +188,9 @@ class ContainersManagement {
 
   getHotelCategoryChoice(){
     return this.answers[5];
+  }
+
+  getHotelConceptChoice(){
+    return this.hotelConceptChoice;
   }
 }

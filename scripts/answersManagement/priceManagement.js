@@ -57,12 +57,7 @@ export const priceManagement = [
     value: "",
     filterValues: {
       type: 15,
-      values: [
-        {
-          id: "",
-          value: "0-10000000",
-        },
-      ],
-    },
+      values: []
+    }
   },
 ];

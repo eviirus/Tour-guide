@@ -59,16 +59,7 @@ export const hotelCategoryManagement = [
     value: "",
     filterValues: {
       type: 2,
-      values: [
-        {
-          id: "5",
-          value: "5",
-        },
-        {
-          id: "4",
-          value: "4",
-        },
-      ],
+      values: []
     },
   },
 ];
