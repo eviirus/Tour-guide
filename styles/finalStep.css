@@ -26,43 +26,56 @@
 }
 
 .final-step-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.final-step-content-container{
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  align-self: flex-start;
-  justify-content: space-between;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 7px;
 }
 
 .final-step-content-element {
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-direction: column;
   flex-wrap: wrap;
-  gap: 5px;
-  margin: 15px 0;
+  gap: 1px;
+  margin: 0;
+  text-align: left;
+}
+
+.final-step-button-container {
+  width: 100%;
+  display: inline-flex;
+  gap: 7px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.final-step-button-wrapper{
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.final-step-text-content{
+  text-align: left;
+  max-width: 60%;
 }
 
 .final-step-static-p {
   font-size: 16px;
-  color: #e84f0e;
+  color: #0093d0;
   font-weight: 600;
-  margin-top: 0;
-  margin-bottom: 0;
+  margin: 0;
 }
 
 .final-step-dynamic-p {
   font-size: 16px;
   font-weight: 400;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.final-step-button-container {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-self: flex-start;
-  justify-self: flex-start;
-  gap: 5px;
+  margin: 0;
 }
 
 .final-step-button-container p {
@@ -113,12 +126,6 @@
   animation: shake 0.5s;
 }
 
-@media (max-width: 1400px) {
-  .final-step {
-    padding: 20px 10px;
-  }
-}
-
 @media (max-width: 530px) {
   .final-step-static-p {
     font-size: 14px;
@@ -137,13 +144,11 @@
     font-size: 14px;
   }
 
-  .final-step-content{
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(2, auto);
+  .final-step-content-container{
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  .final-step-content-container{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+  .final-step{
+    padding: 20px 20px;
   }
 }

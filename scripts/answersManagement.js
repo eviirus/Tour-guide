@@ -1,6 +1,5 @@
 class AnswersManagement {
   static RED_COLOR = "#E4080A";
-  static ORANGE_COLOR = "#e84f03";
   static BLACK_COLOR = "#000000";
   static BLUE_COLOR = "#0093d9";
 
@@ -72,12 +71,10 @@ class AnswersManagement {
 
   applyEmptyStyle(tag) {
     tag.style.color = AnswersManagement.RED_COLOR;
-    tag.style.textDecoration = "underline";
   }
 
   applyFilledStyle(tag){
-    tag.style.color = AnswersManagement.ORANGE_COLOR;
-    tag.style.textDecoration = "none";
+    tag.style.color = AnswersManagement.BLUE_COLOR;
   }
 
   changeTextContent() {
