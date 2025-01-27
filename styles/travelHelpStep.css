@@ -96,7 +96,7 @@
 
 @media (max-width: 600px) {
   .travel-help-step.grid-two-columns {
-    padding: 0;
+    padding: 10px 10px;
   }
 
   .step-choice-grid.grid-two-columns {

@@ -50,6 +50,7 @@
 .choice-button.grid-two-columns {
   font-size: 12px;
   padding: 0 18px;
+  min-height: 35px;
   box-sizing: border-box;
   height: 2.7em;
 }
