@@ -28,7 +28,7 @@
 .final-step-content {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-between;
 }
 
 .final-step-content-container{
@@ -44,6 +44,10 @@
   gap: 1px;
   margin: 0;
   text-align: left;
+}
+
+.final-step-content-element:last-of-type{
+  grid-column: span 3;
 }
 
 .final-step-button-container {
@@ -146,6 +150,10 @@
 
   .final-step-content-container{
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .final-step-content-element:last-of-type{
+    grid-column: span 2;
   }
 
   .final-step{
