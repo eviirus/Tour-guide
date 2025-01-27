@@ -49,11 +49,13 @@ class GuideEffects {
         img.classList.contains("current")
     );
 
-    images[currentIndex].classList.remove("current");
-    images[currentIndex].classList.add("prev");
-
-    images[currentIndex + 1].classList.remove("next");
-    images[currentIndex + 1].classList.add("current");
+    if(!this.guide.containersManagement.getIsFinal()){
+      images[currentIndex].classList.remove("current");
+      images[currentIndex].classList.add("prev");
+  
+      images[currentIndex + 1].classList.remove("next");
+      images[currentIndex + 1].classList.add("current");
+    }
   }
 
   applyBannerCarouselEffectsBackward() {
