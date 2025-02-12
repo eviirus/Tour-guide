@@ -12,7 +12,6 @@
   border-radius: 24px;
   box-sizing: border-box;
   text-align: center;
-  align-items: center;
   justify-content: center;
   gap: 1em;
 }
@@ -28,13 +27,84 @@
 .final-step-content {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  width: 100%;
+  height: 100%;
 }
 
 .final-step-content-container{
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.final-step-main-content{
+  width: 100%;
+  height: calc(100% - 50px);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.final-step-required-answers{
+  display: inline-flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.final-step-optional-answers{
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px -5px 12px 0px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: 80%;
+  background-color: #fff;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  position: absolute;
+  bottom: -20px;
+  transition: height 0.3s ease;
+}
+
+.final-step-optional-answers.hidden{
+  height: 45px;
+}
+
+.final-step-answers{
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 7px;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  opacity: 1;
+  transition: opacity 0.3s ease, padding 0.3s ease, height 0.3s ease;
+}
+
+.final-step-answers.hidden{
+  opacity: 0;
+  padding: 0;
+  height: 0;
+}
+
+.final-step-all-answers-button{
+  background-color: transparent;
+  border: none;
+  border-radius: 12px;
+  padding: 5px 12px;
+  width: 100%;
+  height: 60px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+  font-family: '__Manrope_88c52f', '__Manrope_Fallback_88c52f', sans-serif;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
 }
 
 .final-step-content-element {
@@ -46,14 +116,11 @@
   text-align: left;
 }
 
-.final-step-content-element:last-of-type{
-  grid-column: span 3;
-}
-
 .final-step-button-container {
   width: 100%;
-  display: inline-flex;
-  gap: 7px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
   justify-content: space-between;
   align-items: center;
 }
@@ -66,7 +133,7 @@
 
 .final-step-text-content{
   text-align: left;
-  max-width: 60%;
+  width: 100%;
 }
 
 .final-step-static-p {
@@ -84,6 +151,10 @@
 
 .final-step-button-container p {
   font-size: 16px;
+}
+
+.final-step-button-wrapper{
+  width: 100%;
 }
 
 .final-step-button-view,
@@ -130,6 +201,10 @@
   animation: shake 0.5s;
 }
 
+.arrow-icon-down{
+  transform: rotate(360deg);
+}
+
 @media (max-width: 530px) {
   .final-step-static-p {
     font-size: 14px;
@@ -146,14 +221,6 @@
   .final-step-button-view,
   .final-step-button-contact {
     font-size: 14px;
-  }
-
-  .final-step-content-container{
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .final-step-content-element:last-of-type{
-    grid-column: span 2;
   }
 
   .final-step{

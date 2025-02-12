@@ -1,139 +1,270 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="styles/travelHelpStep.css">
-    <link rel="stylesheet" href="styles/travelInfoSheet.css">
-    <link rel="stylesheet" href="styles/finalStep.css">
-    <link rel="stylesheet" href="styles/travelHelpStepProgress.css">
-    <link rel="stylesheet" href="styles/choiceButton.css">
-</head>
-<body>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="styles/travelHelpStep.css" />
+    <link rel="stylesheet" href="styles/travelInfoSheet.css" />
+    <link rel="stylesheet" href="styles/finalStep.css" />
+    <link rel="stylesheet" href="styles/travelHelpStepProgress.css" />
+    <link rel="stylesheet" href="styles/choiceButton.css" />
+  </head>
+  <body>
     <div class="travel-help-main-container">
-        <div class="travel-help-container">
-            <div class="travel-help-banner-carousel">
-                <img class="banner-carousel current" loading="lazy" alt="Image" src="https://b2ccdn.coraltravel.lt/content/Travel%20in%20January.jpg"/>
-                <img class="banner-carousel next" loading="lazy" alt="Image" src="https://b2ccdn.coraltravel.lt/content/Travel in June.jpg"/>
-                <img class="banner-carousel next" loading="lazy" alt="Image" src="https://b2ccdn.coraltravel.lt/content/Kelionės rugsėjo mėnesį.jpg"/>
-                <img class="banner-carousel next" loading="lazy" alt="Image" src="https://b2ccdn.coraltravel.lt/content/Kelionės gegužės mėnesį.jpg"/>
-                <img class="banner-carousel next" loading="lazy" alt="Image" src="https://b2ccdn.coraltravel.lt/content/Paskutinės minutės kelionės į Dubajų.jpg"/>
-                <img class="banner-carousel next" loading="lazy" alt="Image" src="https://b2ccdn.coraltravel.lt/content/Kelionės gegužės mėnesį.jpg"/>
-                <img class="banner-carousel next" loading="lazy" alt="Image" src="https://b2ccdn.coraltravel.lt/content/Kelionės rugpjūčio mėnesį.jpg"/>
-                <img class="banner-carousel next" loading="lazy" alt="Image" src="https://b2ccdn.coraltravel.lt/content/Travel%20in%20January.jpg"/>
-                <img class="banner-carousel next" loading="lazy" alt="Image" src="https://b2ccdn.coraltravel.lt/content/Kelionės rugpjūčio mėnesį.jpg"/>
+      <div class="travel-help-container">
+        <div class="travel-help-banner-carousel">
+          <img
+            class="banner-carousel current"
+            loading="lazy"
+            alt="Image"
+            src="https://b2ccdn.coraltravel.lt/content/Travel%20in%20January.jpg"
+          />
+          <img
+            class="banner-carousel next"
+            loading="lazy"
+            alt="Image"
+            src="https://b2ccdn.coraltravel.lt/content/Travel in June.jpg"
+          />
+          <img
+            class="banner-carousel next"
+            loading="lazy"
+            alt="Image"
+            src="https://b2ccdn.coraltravel.lt/content/Kelionės rugsėjo mėnesį.jpg"
+          />
+          <img
+            class="banner-carousel next"
+            loading="lazy"
+            alt="Image"
+            src="https://b2ccdn.coraltravel.lt/content/Kelionės gegužės mėnesį.jpg"
+          />
+          <img
+            class="banner-carousel next"
+            loading="lazy"
+            alt="Image"
+            src="https://b2ccdn.coraltravel.lt/content/Paskutinės minutės kelionės į Dubajų.jpg"
+          />
+          <img
+            class="banner-carousel next"
+            loading="lazy"
+            alt="Image"
+            src="https://b2ccdn.coraltravel.lt/content/Kelionės gegužės mėnesį.jpg"
+          />
+          <img
+            class="banner-carousel next"
+            loading="lazy"
+            alt="Image"
+            src="https://b2ccdn.coraltravel.lt/content/Kelionės rugpjūčio mėnesį.jpg"
+          />
+          <img
+            class="banner-carousel next"
+            loading="lazy"
+            alt="Image"
+            src="https://b2ccdn.coraltravel.lt/content/Travel%20in%20January.jpg"
+          />
+          <img
+            class="banner-carousel next"
+            loading="lazy"
+            alt="Image"
+            src="https://b2ccdn.coraltravel.lt/content/Kelionės rugpjūčio mėnesį.jpg"
+          />
+        </div>
+
+        <div class="travel-help-choice-window">
+          <div class="travel-help-intro">
+            <div class="travel-help-intro-content">
+              <h2>Gaukite asmeninį kelionės pasiūlymą tiesiogiai svetainėje</h2>
+              <p>Atsakydami į paprastus klausimus apie atostogų pageidavimus</p>
+              <div class="intro-button-container">
+                <button class="intro-start-button" id="start-button">
+                  Pradėkime!
+                </button>
+              </div>
             </div>
-    
-            <div class="travel-help-choice-window">
-                <div class="travel-help-intro">
-                  <div class="travel-help-intro-content">
-                    <h2>Gaukite asmeninį kelionės pasiūlymą tiesiogiai svetainėje</h2>
-                    <p>Atsakydami į paprastus klausimus apie atostogų pageidavimus</p>
-                    <div class="intro-button-container">
-                        <button class="intro-start-button" id="start-button">Pradėkime!</button>
+          </div>
+
+          <div class="travel-help-step">
+            <h2><br /></h2>
+            <h3><br /></h3>
+            <div class="step-choice-grid"><br /></div>
+
+            <div class="travel-info-sheet">
+              <div class="info-sheet-item">
+                <img
+                  src="https://b2ccdn.coraltravel.lt/content/Icons%202024%2009%2010-01.svg"
+                  class="info-sheet-icon"
+                />
+                <div class="info-sheet-info">
+                  Tiesioginis skrydis<br />
+                  <strong class="info-changing">Apie 3 val.</strong>
+                </div>
+              </div>
+              <div class="info-sheet-item">
+                <img
+                  src="https://b2ccdn.coraltravel.lt/content/Icons%202024%2009%2010-02.svg"
+                  class="info-sheet-icon"
+                />
+                <div class="info-sheet-info">
+                  Laiko skirtumas<br />
+                  <strong class="info-changing">Žiema +1 val.</strong>
+                </div>
+              </div>
+              <div class="info-sheet-item">
+                <img
+                  src="https://b2ccdn.coraltravel.lt/content/Icons%202024%2009%2010-04.svg"
+                  class="info-sheet-icon"
+                />
+                <div class="info-sheet-info">
+                  Vidutinė temperatūra<br />
+                  <strong class="info-changing">4 val.</strong>
+                </div>
+              </div>
+              <div class="info-sheet-item">
+                <img
+                  src="https://b2ccdn.coraltravel.lt/content/Icons%202024%2009%2010-03.svg"
+                  class="info-sheet-icon"
+                />
+                <div class="info-sheet-info">
+                  Paso galiojimo laikas<br />
+                  <strong class="info-changing"
+                    ><a
+                      class="passport-info-link"
+                      href="https://coraltravel.lt/countries/turkey"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >Skaityti</a
+                    ></strong
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="final-step">
+            <h2>Paskutinis žingsnis</h2>
+
+            <div class="final-step-content">
+              <div class="final-step-content-container">
+                <div class="final-step-main-content">
+                  <div class="final-step-required-answers">
+                    <div class="final-step-content-element">
+                      <p class="final-step-static-p" id="destinationTag">
+                        Kryptis
+                      </p>
+                      <p class="final-step-dynamic-p" id="destination"></p>
+                    </div>
+                    <div class="final-step-content-element">
+                      <p class="final-step-static-p" id="seasonTag">Kada</p>
+                      <p class="final-step-dynamic-p" id="season"></p>
+                    </div>
+                    <div class="final-step-content-element">
+                      <p class="final-step-static-p" id="dateTag">Trukmė</p>
+                      <p class="final-step-dynamic-p" id="date"></p>
+                    </div>
+                  </div>
+                  <div class="final-step-button-container">
+                    <p class="final-step-text-content">
+                      Peržiūrėkite galimus variantus.<br />Jeigu rezultatų nėra arba
+                      jums nepatiko, siūlome susisiekti su mumis - padėsime sukurti
+                      kėlionę!
+                    </p>
+                    <div class="final-step-button-wrapper">
+                      <a
+                        class="final-step-button-view"
+                        href="#"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style="text-decoration: none; color: #fff"
+                        >Pasiūlymai</a
+                      >
+                      <a
+                        class="final-step-button-contact"
+                        href="https://coraltravel.lt/contact-us/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >Susisiekti</a
+                      >
                     </div>
                   </div>
                 </div>
-    
-                <div class="travel-help-step">                    
-                    <h2><br></h2>
-                    <h3><br></h3>
-                    <div class="step-choice-grid"><br></div>
-            
-                    <div class="travel-info-sheet">
-                      <div class="info-sheet-item">
-                        <img src="https://b2ccdn.coraltravel.lt/content/Icons%202024%2009%2010-01.svg" class="info-sheet-icon">
-                        <div class="info-sheet-info">
-                          Tiesioginis skrydis<br>
-                          <strong class="info-changing">Apie 3 val.</strong>
-                        </div>
+                
+                <div class="final-step-optional-answers">
+                  <button type="button" class="final-step-all-answers-button">Visi atsakymai<svg
+                    class="arrow-icon-down"
+                    width="21"
+                    height="21"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M3 6L8 11L13 6"
+                      stroke="#000"
+                      stroke-linejoin="round"
+                    ></path></svg></button>
+                  <div class="final-step-answers">
+                      <div class="final-step-content-element">
+                        <p class="final-step-static-p">Biudžetas</p>
+                        <p class="final-step-dynamic-p" id="budget"></p>
                       </div>
-                      <div class="info-sheet-item">
-                        <img src="https://b2ccdn.coraltravel.lt/content/Icons%202024%2009%2010-02.svg" class="info-sheet-icon">
-                        <div class="info-sheet-info">
-                          Laiko skirtumas<br>
-                          <strong class="info-changing">Žiema +1 val.</strong>
-                        </div>
+                      <div class="final-step-content-element">
+                        <p class="final-step-static-p">Keliautojai</p>
+                        <p class="final-step-dynamic-p" id="traveler"></p>
                       </div>
-                      <div class="info-sheet-item">
-                        <img src="https://b2ccdn.coraltravel.lt/content/Icons%202024%2009%2010-04.svg" class="info-sheet-icon">
-                        <div class="info-sheet-info">
-                          Vidutinė temperatūra<br>
-                          <strong class="info-changing">4 val.</strong>
-                        </div>
+                      <div class="final-step-content-element">
+                        <p class="final-step-static-p">Viešbutis</p>
+                        <p class="final-step-dynamic-p" id="hotel"></p>
                       </div>
-                      <div class="info-sheet-item">
-                        <img src="https://b2ccdn.coraltravel.lt/content/Icons%202024%2009%2010-03.svg" class="info-sheet-icon">
-                        <div class="info-sheet-info">
-                          Paso galiojimo laikas<br>
-                          <strong class="info-changing"><a class="passport-info-link" href="https://coraltravel.lt/countries/turkey" target="_blank" rel="noopener noreferrer">Skaityti</a></strong>
-                        </div>
+                      <div class="final-step-content-element">
+                        <p class="final-step-static-p">Viešbučio koncepcija</p>
+                        <p class="final-step-dynamic-p" id="hotelConcept"></p>
                       </div>
-                    </div>
+                  </div>
                 </div>
-    
-                <div class="final-step">
-                    <h2>Paskutinis žingsnis</h2>
-            
-                    <div class="final-step-content">
-                      <div class="final-step-content-container">
-                        <div class="final-step-content-element">
-                          <p class="final-step-static-p" id="destinationTag">Kryptis</p>
-                          <p class="final-step-dynamic-p" id="destination"></p>
-                        </div>
-                        <div class="final-step-content-element">
-                          <p class="final-step-static-p">Biudžetas</p>
-                          <p class="final-step-dynamic-p" id="budget"></p>
-                        </div>
-                        <div class="final-step-content-element">
-                          <p class="final-step-static-p" id="seasonTag">Kada</p>
-                          <p class="final-step-dynamic-p" id="season"></p>
-                        </div>
-                        <div class="final-step-content-element">
-                          <p class="final-step-static-p" id="dateTag">Trukmė</p>
-                          <p class="final-step-dynamic-p" id="date"></p>
-                        </div>
-                        <div class="final-step-content-element">
-                          <p class="final-step-static-p">Keliautojai</p>
-                          <p class="final-step-dynamic-p" id="traveler"></p>
-                        </div>
-                        <div class="final-step-content-element">
-                          <p class="final-step-static-p">Viešbutis</p>
-                          <p class="final-step-dynamic-p" id="hotel"></p>
-                        </div>
-                        <div class="final-step-content-element">
-                          <p class="final-step-static-p">Viešbučio koncepcija</p>
-                          <p class="final-step-dynamic-p" id="hotelConcept"></p>
-                        </div>
-                      </div>
-            
-                      <div class="final-step-button-container">
-                        <p class="final-step-text-content">Peržiūrėkite galimus variantus.<br>Jeigu rezultatų nėra arba jums nepatiko, siūlome susisiekti su mumis - padėsime sukurti kėlionę!</p>
-                        <div class="final-step-button-wrapper">
-                          <a class="final-step-button-view" href="#" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: #fff;">Peržiūrėti pasiūlymus</a>
-                          <a class="final-step-button-contact" href="https://coraltravel.lt/contact-us/" target="_blank" rel="noopener noreferrer">Susisiekti</a>
-                        </div>
-                      </div>
-                    </div>
-            
-                </div>
-    
-                <div class="travel-help-step-progress">
-                    <button class="button-direction-prev" type="button"><svg class="arrow-icon-prev" width="21" height="21" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M3 6L8 11L13 6" stroke="#000" stroke-linejoin="round"></path>
-                      </svg>Grįžti</button>
-                    <div class="progress-bar">
-                      <div class="bar-filler"><br></div>
-                    </div>
-                    <button class="button-direction-next" type="button">Toliau<svg class="arrow-icon-next" width="21" height="21" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M3 6L8 11L13 6" stroke="#fff" stroke-linejoin="round"></path>
-                      </svg>
-                    </button>
-                </div>
+              </div>
             </div>
+          </div>
+
+          <div class="travel-help-step-progress">
+            <button class="button-direction-prev" type="button">
+              <svg
+                class="arrow-icon-prev"
+                width="21"
+                height="21"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M3 6L8 11L13 6"
+                  stroke="#000"
+                  stroke-linejoin="round"
+                ></path></svg>
+                Grįžti
+            </button>
+            <div class="progress-bar">
+              <div class="bar-filler"><br /></div>
+            </div>
+            <button class="button-direction-next" type="button">
+              Toliau<svg
+                class="arrow-icon-next"
+                width="21"
+                height="21"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M3 6L8 11L13 6"
+                  stroke="#fff"
+                  stroke-linejoin="round"
+                ></path>
+              </svg>
+            </button>
+          </div>
         </div>
+      </div>
     </div>
 
     <script type="module" src="index.js"></script>
@@ -143,16 +274,37 @@
     <script type="module" src="scripts/steps.js"></script>
     <script type="module" src="scripts/infoSheet.js"></script>
     <script src="scripts/containersManagement.js"></script>
-    <script type="module" src="scripts/answersManagement/countryDetails.js"></script>
-    <script type="module" src="scripts/answersManagement/seasonManagement.js"></script>
-    <script type="module" src="scripts/answersManagement/priceManagement.js"></script>
-    <script type="module" src="scripts/answersManagement/nightManagement.js"></script>
-    <script type="module" src="scripts/answersManagement/travellerManagement.js"></script>
-    <script type="module" src="scripts/answersManagement/hotelCategoryManagement.js"></script>
-    <script type="module" src="scripts/answersManagement/hotelConceptManagement.js"></script>
+    <script
+      type="module"
+      src="scripts/answersManagement/countryDetails.js"
+    ></script>
+    <script
+      type="module"
+      src="scripts/answersManagement/seasonManagement.js"
+    ></script>
+    <script
+      type="module"
+      src="scripts/answersManagement/priceManagement.js"
+    ></script>
+    <script
+      type="module"
+      src="scripts/answersManagement/nightManagement.js"
+    ></script>
+    <script
+      type="module"
+      src="scripts/answersManagement/travellerManagement.js"
+    ></script>
+    <script
+      type="module"
+      src="scripts/answersManagement/hotelCategoryManagement.js"
+    ></script>
+    <script
+      type="module"
+      src="scripts/answersManagement/hotelConceptManagement.js"
+    ></script>
     <script type="module" src="scripts/valuesGenerating.js"></script>
     <script src="scripts/guideEffects.js"></script>
     <script src="scripts/answersManagement.js"></script>
     <script type="module" src="scripts/searchResultGenerating.js"></script>
-</body>
+  </body>
 </html>

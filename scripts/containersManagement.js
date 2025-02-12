@@ -71,6 +71,7 @@ class ContainersManagement {
   navigatePrevToIntro() {
     this.introContainer.style.display = "flex";
     this.stepContainer.style.display = "none";
+    this.stepContainer.style.opacity = "0";
     this.progressBar.style.display = "none";
     this.answers = [];
     this.currentStep = 0;
@@ -90,7 +91,7 @@ class ContainersManagement {
     this.guide.nextButtonState();
     this.stepContainer.style.display = "none";
     this.finalStepContainer.style.display = "flex";
-
+    
     if(!this.guide.answersManagement.checkIfEmpty()){
       this.guide.valuesGenerating.generateResults();
       this.guide.valuesGenerating.getTravellerCount();
