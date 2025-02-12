@@ -74,6 +74,7 @@ class StepManager {
     this.applyButtonLayout(button, stepData.layout);
 
     button.textContent = choice;
+    button.setAttribute("data-choice", choice);
 
     button.addEventListener("click", () =>
       this.handleChoiceButtonClick(choice, stepData, button)
@@ -97,7 +98,7 @@ class StepManager {
       stepData.layout,
       () => this.guide.containersManagement.handleChoiceButtonClickGrid(choice, button),
       () => this.guide.containersManagement.handleChoiceButtonClickGridTwoCol(choice, button),
-      () => this.guide.containersManagement.handleChoiceButtonClickNoCol(choice)
+      () => this.guide.containersManagement.handleChoiceButtonClickNoCol(choice, button)
     );
   }
 

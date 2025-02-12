@@ -42,7 +42,7 @@ export const steps = [
   {
     heading: "Nuostabu!",
     question: "Pasirinkite viešbučio kategoriją",
-    choices: ["4 - 5*", "2 - 3*", "1*", "Apartamentai"],
+    choices: ["4 - 5*", "2 - 3*", "Apartamentai"],
     layout: null,
   },
   {

@@ -32,18 +32,6 @@ export const hotelCategoryManagement = [
     },
   },
   {
-    value: "1*",
-    filterValues: {
-      type: 2,
-      values: [
-        {
-          id: "1",
-          value: "1",
-        },
-      ],
-    },
-  },
-  {
     value: "Apartamentai",
     filterValues: {
       type: 2,

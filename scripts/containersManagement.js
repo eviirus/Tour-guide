@@ -42,10 +42,6 @@ class ContainersManagement {
   }
 
   handleNextButtonClick() {
-    if(this.guide.stepsManager.getLayout() !== "grid" || this.guide.stepsManager.getLayout() !== "grid-two-columns"){
-      this.answers[this.currentStep] = "";
-    };
-
     if (this.currentStep < this.steps.length - 1) {
       this.navigateNextDefaultStep();
     } else if (this.currentStep === this.steps.length - 1) {
@@ -60,12 +56,14 @@ class ContainersManagement {
     this.isFinal = false;
     this.guide.nextButtonState();
     this.guide.guideEffects.applyBannerCarouselEffectsBackward();
+    this.reapplySelectedChoice();
   }
 
   navigatePrevDefaultStep() {
     this.currentStep--;
     this.guide.stepsManager.displayStep(this.currentStep);
     this.guide.guideEffects.applyBannerCarouselEffectsBackward();
+    this.reapplySelectedChoice();
   }
 
   navigatePrevToIntro() {
@@ -83,6 +81,7 @@ class ContainersManagement {
     this.currentStep++;
     this.guide.stepsManager.displayStep(this.currentStep);
     this.guide.guideEffects.applyBannerCarouselEffectsForward();
+    this.reapplySelectedChoice();
   }
 
   async navigateNextToFinalStep() {
@@ -152,11 +151,42 @@ class ContainersManagement {
     }
   }
 
-  handleChoiceButtonClickNoCol(choice) {
+  handleChoiceButtonClickNoCol(choice, button) {
     this.answers[this.currentStep] = choice;
+    button.classList.add("selected");
     this.currentStep++;
     this.guide.stepsManager.displayStep(this.currentStep);
     this.guide.guideEffects.applyBannerCarouselEffectsForward();
+  }
+
+  reapplySelectedChoice() {
+    const selectedChoice = this.answers[this.currentStep];
+    if (selectedChoice) {
+      const button = Array.from(document.querySelectorAll(".choice-button")).find(
+        (btn) => btn.dataset.choice === selectedChoice
+      );
+      if (button) {
+        button.classList.add("selected");
+      }
+    }
+
+    if (this.countryChoice) {
+      const countryButton = Array.from(document.querySelectorAll(".choice-button")).find(
+        (btn) => btn.dataset.choice === this.countryChoice
+      );
+      if (countryButton) {
+        countryButton.classList.add("selected");
+      }
+    }
+
+    if (this.hotelConceptChoice) {
+      const hotelConceptButton = Array.from(document.querySelectorAll(".choice-button")).find(
+        (btn) => btn.dataset.choice === this.hotelConceptChoice
+      );
+      if (hotelConceptButton) {
+        hotelConceptButton.classList.add("selected");
+      }
+    }
   }
 
   getCurrentStep() {
