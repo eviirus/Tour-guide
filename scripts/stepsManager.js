@@ -37,7 +37,11 @@ class StepManager {
     stepData.choices.forEach((choice) =>
       this.createChoiceButton(choice, stepData)
     );
-
+    
+    if(stepIndex === 2){
+      this.guide.guideEffects.hideUnavailableChoices();
+    }
+    
     this.updateProgress();
     this.guide.nextButtonState();
   }
@@ -81,6 +85,7 @@ class StepManager {
     );
 
     this.guide.containersManagement.buttonContainer.appendChild(button);
+    this.guide.guideEffects.storeChoiceButton(button);
   }
 
   applyButtonLayout(button, layout){

@@ -77,6 +77,17 @@
   flex-basis: 20%;
 }
 
+.choice-button.grid.disabled{
+  color: #f5f5f5;
+  cursor: not-allowed;
+}
+
+.choice-button.grid.disabled:hover {
+  color: #f5f5f5;
+  background-color: transparent;
+  box-shadow: inset 0 0 0 2px;
+}
+
 @media (hover: hover) {
   .choice-button:hover {
     color: #fff;

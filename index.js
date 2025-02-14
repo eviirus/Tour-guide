@@ -7,6 +7,7 @@ import { travellerManagement } from "./scripts/answersManagement/travellerManage
 import { hotelCategoryManagement } from "./scripts/answersManagement/hotelCategoryManagement.js";
 import { hotelConceptManagement } from "./scripts/answersManagement/hotelConceptManagement.js";
 import { fetchEncryptedData } from "./scripts/searchResultGenerating.js";
+import { countryDetails } from "./scripts/answersManagement/countryDetails.js";
 import ValuesGenerating from "./scripts/valuesGenerating.js";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -17,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
   guide.containersManagement = new ContainersManagement(guide, steps, fetchEncryptedData);
   guide.valuesGenerating = new ValuesGenerating(guide, nightManagement, priceManagement, seasonManagement, travellerManagement, hotelCategoryManagement, hotelConceptManagement);
   guide.answersManagement = new AnswersManagement(guide);
-  guide.guideEffects = new GuideEffects(guide);
+  guide.guideEffects = new GuideEffects(guide, countryDetails);
 
   guide.initialize();
 });

@@ -70,18 +70,21 @@ class ValuesGenerating{
         this.hotelConceptResult = hotelConceptDetail ? hotelConceptDetail.filterValues : null;
     }
 
-    getTravellerCount(){
+    getTravellerCount() {
         const travellerChoice = this.guide.containersManagement.getTravellerChoice();
         const travellerDetail = this.travellerManagement.find(detail => detail.value === travellerChoice);
     
-        this.travellerResult = travellerDetail ? travellerDetail.passengers : null;
+        this.travellerResult = travellerDetail ? travellerDetail.passengers : [
+          { age: 20, passengerType: 0 },
+          { age: 20, passengerType: 0 }
+        ];
     
-        const travellerCount = this.travellerResult ? Object.keys(this.travellerResult).length : 0;
+        const travellerCount = this.travellerResult ? this.travellerResult.length : 0;
     
-        localStorage.setItem("travellerCount", JSON.stringify({ travellerCount }));  
-
+        localStorage.setItem("travellerCount", JSON.stringify({ travellerCount }));
+    
         setTravellerCount();
-    }
+      }
 
     getNightResult(){
         return this.nightResult;

@@ -42,6 +42,13 @@ class ContainersManagement {
   }
 
   handleNextButtonClick() {
+    const layout = this.guide.stepsManager.getLayout();
+    const currentAnswer = this.answers[this.currentStep];
+
+    if ((layout !== "grid" && layout !== "grid-two-columns") && currentAnswer === undefined) {
+      this.answers[this.currentStep] = "";
+    }
+
     if (this.currentStep < this.steps.length - 1) {
       this.navigateNextDefaultStep();
     } else if (this.currentStep === this.steps.length - 1) {
@@ -131,9 +138,14 @@ class ContainersManagement {
       document
         .querySelectorAll(".choice-button")
         .forEach((btn) => btn.classList.remove("selected"));
-      button.classList.add("selected");
-      this.guide.infoSheetManager.displayInfoSheet(choice);
-      this.countryChoice = choice;
+      
+      if(this.checkIfChoiceAvailable(choice)){
+        this.countryChoice = choice;
+        button.classList.add("selected");
+        this.guide.infoSheetManager.displayInfoSheet(choice);
+      }else{
+        this.countryChoice = "";
+      }
     }
   }
 
@@ -187,6 +199,18 @@ class ContainersManagement {
         hotelConceptButton.classList.add("selected");
       }
     }
+  }
+
+  checkIfChoiceAvailable(choice) {
+    let isAvailable = true;
+
+    this.guide.guideEffects.choiceButtons.forEach(button => {
+      if(button.dataset.choice === choice){
+        button.dataset.available === "false" ? isAvailable = false : isAvailable = true;
+      }
+    })
+
+    return isAvailable;
   }
 
   getCurrentStep() {

@@ -20,10 +20,7 @@ export const steps = [
       "Graikija",
       "Juodkalnija",
       "Ispanija",
-      "Turkija",
-      "Tailandas",
-      "Vietnamas",
-      "Dominikos Respublika",
+      "Turkija"
     ],
     layout: "grid",
   },

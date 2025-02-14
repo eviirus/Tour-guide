@@ -1,6 +1,8 @@
 class GuideEffects {
-  constructor(guide) {
+  constructor(guide, countryDetails) {
     this.guide = guide;
+    this.choiceButtons = [];
+    this.countryDetails = countryDetails;
 
     this.initializeDOMElements();
     this.closeOptionalAnswers();
@@ -112,5 +114,47 @@ class GuideEffects {
     this.answersContainer.classList.remove("hidden");
 
     this.optionalContainerButton.textContent = "Uždaryti";
+  }
+
+  storeChoiceButton(button) {
+    this.choiceButtons.push(button);
+  }
+
+  hideUnavailableChoices() {
+    this.checkIfAvailable();
+
+    this.choiceButtons.forEach(button => {
+      if (button.classList.contains("grid")) {
+        if (button.dataset.available === "true") {
+          button.classList.remove("disabled");
+          button.removeEventListener("click", this.preventClick);
+        } else {
+          button.classList.add("disabled");
+          this.guide.containersManagement.countryChoice = "";
+          button.addEventListener("click", this.preventClick);
+        }
+      }
+    });
+  }
+
+  checkIfAvailable() {
+    const season = this.guide.containersManagement.getSeasonChoice();
+
+    this.choiceButtons.forEach(button => {
+      let isAvailable = false;
+
+      this.countryDetails.forEach(countryDetail => {
+        if (countryDetail.availableSeasons.includes(season) && countryDetail.userSelected === button.dataset.choice) {
+          isAvailable = true;
+        }
+      });
+
+      button.dataset.available = isAvailable ? "true" : "false";
+    });
+  }
+
+  preventClick(event) {
+    event.preventDefault();
+    event.stopPropagation();
   }
 }

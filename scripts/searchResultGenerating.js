@@ -53,7 +53,7 @@ export async function fetchEncryptedData(selectedCountry, values) {
             id: location.payloadId,
             locationId: location.payloadLocationId,
             locationUniqueId: location.payloadLocationUniqueId,
-            type: 0,
+            type: location.type,
             name: location.payloadName,
             countryName: location.payloadCountryName,
             friendlyUrl: location.payloadFriendlyUrl,

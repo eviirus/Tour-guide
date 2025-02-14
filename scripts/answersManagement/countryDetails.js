@@ -9,6 +9,7 @@ export const countryDetails = [
                 payloadId: "1-0",
                 payloadLocationId: "1",
                 payloadLocationUniqueId: "1-0",
+                type: 0
             }
         ],
         departureLocation:[
@@ -19,6 +20,11 @@ export const countryDetails = [
                 payloadLocationId: "9239",
                 payloadLocationUniqueId: "9239-5",
             }
+        ],
+        availableSeasons:[
+            "Vasarą",
+            "Rudenį",
+            "Pavasarį"
         ]
     },
     {
@@ -31,6 +37,7 @@ export const countryDetails = [
                 payloadId: "12-0",
                 payloadLocationId: "12",
                 payloadLocationUniqueId: "12-0",
+                type: 0
             }
         ],
         departureLocation:[
@@ -41,6 +48,10 @@ export const countryDetails = [
                 payloadLocationId: "9239",
                 payloadLocationUniqueId: "9239-5",
             }
+        ],
+        availableSeasons:[
+            "Rudenį",
+            "Žiemą"
         ]
     },
     {
@@ -53,6 +64,7 @@ export const countryDetails = [
                 payloadId: "43-0",
                 payloadLocationId: "43",
                 payloadLocationUniqueId: "43-0",
+                type: 0
             }
         ],
         departureLocation:[
@@ -63,6 +75,11 @@ export const countryDetails = [
                 payloadLocationId: "9239",
                 payloadLocationUniqueId: "9239-5",
             }
+        ],
+        availableSeasons:[
+            "Vasarą",
+            "Rudenį",
+            "Pavasarį"
         ]
     },
     {
@@ -75,6 +92,7 @@ export const countryDetails = [
                 payloadId: "80-0",
                 payloadLocationId: "80",
                 payloadLocationUniqueId: "80-0",
+                type: 0
             }
         ],
         departureLocation:[
@@ -85,28 +103,11 @@ export const countryDetails = [
                 payloadLocationId: "9239",
                 payloadLocationUniqueId: "9239-5",
             }
-        ]
-    },
-    {
-        userSelected: "Tunisas",
-        arrivalLocation:[
-            {
-                payloadName: "Tunisas",
-                payloadCountryName: "Tunisas",
-                payloadFriendlyUrl: "tunisas",
-                payloadId: "1-0",
-                payloadLocationId: "1",
-                payloadLocationUniqueId: "1-0",
-            }
         ],
-        departureLocation:[
-            {
-                payloadName: "Vilnius",
-                payloadFriendlyUrl: "vilnius",
-                payloadId: "9239-5",
-                payloadLocationId: "9239",
-                payloadLocationUniqueId: "9239-5",
-            }
+        availableSeasons:[
+            "Vasarą",
+            "Rudenį",
+            "Pavasarį"
         ]
     },
     {
@@ -119,6 +120,7 @@ export const countryDetails = [
                 payloadId: "31-0",
                 payloadLocationId: "31",
                 payloadLocationUniqueId: "31-0",
+                type: 0
             }
         ],
         departureLocation:[
@@ -129,18 +131,42 @@ export const countryDetails = [
                 payloadLocationId: "9239",
                 payloadLocationUniqueId: "9239-5",
             }
+        ],
+        availableSeasons:[
+            "Vasarą",
+            "Rudenį",
+            "Pavasarį"
         ]
     },
     {
         userSelected: "Ispanija",
         arrivalLocation:[
             {
-                payloadName: "Ispanija",
+                payloadName: "Barcelona",
                 payloadCountryName: "Ispanija",
-                payloadFriendlyUrl: "ispanija",
+                payloadFriendlyUrl: "barcelona",
                 payloadId: "42-0",
                 payloadLocationId: "42",
                 payloadLocationUniqueId: "42-0",
+                type: 3
+            },
+            {
+                payloadName: "Fuerteventura",
+                payloadCountryName: "Ispanija",
+                payloadFriendlyUrl: "fuerteventura",
+                payloadId: "42-0",
+                payloadLocationId: "42",
+                payloadLocationUniqueId: "42-0",
+                type: 3
+            },
+            {
+                payloadName: "Gran Canaria",
+                payloadCountryName: "Ispanija",
+                payloadFriendlyUrl: "grancanaria",
+                payloadId: "42-0",
+                payloadLocationId: "42",
+                payloadLocationUniqueId: "42-0",
+                type: 3
             }
         ],
         departureLocation:[
@@ -151,72 +177,11 @@ export const countryDetails = [
                 payloadLocationId: "9239",
                 payloadLocationUniqueId: "9239-5",
             }
-        ]
-    },
-    {
-        userSelected: "Tailandas",
-        arrivalLocation:[
-            {
-                payloadName: "Tailandas",
-                payloadCountryName: "Tailandas",
-                payloadFriendlyUrl: "tailandas",
-                payloadId: "33-0",
-                payloadLocationId: "33",
-                payloadLocationUniqueId: "33-0",
-            }
         ],
-        departureLocation:[
-            {
-                payloadName: "Warszawa",
-                payloadFriendlyUrl: "warszawa",
-                payloadId: "500-5",
-                payloadLocationId: "500",
-                payloadLocationUniqueId: "500-5",
-            }
-        ]
-    },
-    {
-        userSelected: "Vietnamas",
-        arrivalLocation:[
-            {
-                payloadName: "Vietnamas",
-                payloadCountryName: "Vietnamas",
-                payloadFriendlyUrl: "vietnamas",
-                payloadId: "41-0",
-                payloadLocationId: "41",
-                payloadLocationUniqueId: "41-0",
-            }
-        ],
-        departureLocation:[
-            {
-                payloadName: "Warszawa",
-                payloadFriendlyUrl: "warszawa",
-                payloadId: "500-5",
-                payloadLocationId: "500",
-                payloadLocationUniqueId: "500-5",
-            }
-        ]
-    },
-    {
-        userSelected: "Dominikos Respublika",
-        arrivalLocation:[
-            {
-                payloadName: "Dominikos Respublika",
-                payloadCountryName: "Dominikos Respublika",
-                payloadFriendlyUrl: "dominikosrespublika",
-                payloadId: "36-0",
-                payloadLocationId: "36",
-                payloadLocationUniqueId: "36-0",
-            }
-        ],
-        departureLocation:[
-            {
-                payloadName: "Warszawa",
-                payloadFriendlyUrl: "warszawa",
-                payloadId: "500-5",
-                payloadLocationId: "500",
-                payloadLocationUniqueId: "500-5",
-            }
+        availableSeasons:[
+            "Vasarą",
+            "Rudenį",
+            "Pavasarį"
         ]
     },
 ]
