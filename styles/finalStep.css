@@ -67,7 +67,7 @@
 }
 
 .final-step-optional-answers.hidden{
-  height: 45px;
+  height: 50px;
 }
 
 .final-step-answers{
@@ -94,7 +94,7 @@
   border-radius: 12px;
   padding: 5px 12px;
   width: 100%;
-  height: 60px;
+  height: 50px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -103,8 +103,8 @@
   color: #000;
   font-family: '__Manrope_88c52f', '__Manrope_Fallback_88c52f', sans-serif;
   font-size: 16px;
-  transition: background-color 0.3s ease;
   cursor: pointer;
+  transition: height 0.3s ease, background-color 0.3s ease;
 }
 
 .final-step-content-element {
@@ -203,6 +203,11 @@
 
 .arrow-icon-down{
   transform: rotate(360deg);
+}
+
+.arrow-icon-down.svg{
+  width: 21px;
+  height: 21px;
 }
 
 @media (max-width: 530px) {
