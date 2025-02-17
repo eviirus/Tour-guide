@@ -130,7 +130,6 @@ export default class GuideEffects {
           button.removeEventListener("click", this.preventClick);
         } else {
           button.classList.add("disabled");
-          this.guide.containersManagement.countryChoice = "";
           button.addEventListener("click", this.preventClick);
         }
       }

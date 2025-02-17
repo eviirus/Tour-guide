@@ -169,6 +169,7 @@ export default class ContainersManagement {
     this.currentStep++;
     this.guide.stepsManager.displayStep(this.currentStep);
     this.guide.guideEffects.applyBannerCarouselEffectsForward();
+    this.reapplySelectedChoice();
   }
 
   reapplySelectedChoice() {
