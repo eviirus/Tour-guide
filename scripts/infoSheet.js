@@ -12,8 +12,8 @@ export const infoSheet = [
     element: "Ispanija",
     content: [
       "Apie 3.5 val.",
-      "-2 val.",
-      "Vidutiniškai +22°C"
+      "-1 val.",
+      "Vasara +27°C"
     ],
     link: "https://coraltravel.lt/countries/tenerife"
   },
