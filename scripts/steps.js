@@ -20,7 +20,8 @@ export const steps = [
       "Graikija",
       "Juodkalnija",
       "Ispanija",
-      "Turkija"
+      "Turkija",
+      "Tenerifė"
     ],
     layout: "grid",
   },

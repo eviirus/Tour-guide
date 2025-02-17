@@ -18,8 +18,8 @@ export const seasonManagement = [
     {
         season: "Žiemą",
         beginDates: [
-            `${currentYear}-02-01T00:00:00Z`,
-            `${currentYear}-02-28T00:00:00Z`
+            `${currentYear + 1}-01-01T00:00:00Z`,
+            `${currentYear + 1}-01-31T00:00:00Z`
         ],
     },
     {

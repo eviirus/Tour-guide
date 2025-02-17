@@ -42,14 +42,6 @@ export async function fetchEncryptedData(selectedCountry, values) {
     const payload = {
         beginDates: values.seasonResult,
         arrivalLocations: countryDetail.arrivalLocation.map(location => ({
-            isFullFilled: true,
-            isDefault: null,
-            countryIds: [],
-            nearestAreas: null,
-            nearestPlaces: [],
-            nearestAirportIds: [],
-            areaEeId: null,
-            placeEeId: null,
             id: location.payloadId,
             locationId: location.payloadLocationId,
             locationUniqueId: location.payloadLocationUniqueId,
@@ -57,10 +49,12 @@ export async function fetchEncryptedData(selectedCountry, values) {
             name: location.payloadName,
             countryName: location.payloadCountryName,
             friendlyUrl: location.payloadFriendlyUrl,
-            transportPointId: null,
-            tourId: null,
-            parent: null,
-            children: null
+            parent: location.parent ? {
+              countryId: location.parent.payloadCountryId,
+              id: location.parent.payloadId,
+              name: location.parent.payloadName,
+              type: location.parent.type
+            } : null,
         })),
         departureLocations: countryDetail.departureLocation.map(location => ({
             id: location.payloadId,
@@ -68,12 +62,7 @@ export async function fetchEncryptedData(selectedCountry, values) {
             locationUniqueId: location.payloadLocationUniqueId,
             type: 5,
             name: location.payloadName,
-            countryName: null,
             friendlyUrl: location.payloadFriendlyUrl,
-            transportPointId: null,
-            tourId: null,
-            parent: null,
-            children: null
         })),
         nights: values.nightResult,
         datePickerMode: 0,
@@ -88,10 +77,7 @@ export async function fetchEncryptedData(selectedCountry, values) {
             pageSize: 20,
             sortType: 0
         },
-         
         additionalFilters: mergedFilters,
-        imageSizes: [0],
-        flightType: 2
     };
 
     try {

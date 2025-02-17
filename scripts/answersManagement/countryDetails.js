@@ -9,7 +9,8 @@ export const countryDetails = [
                 payloadId: "1-0",
                 payloadLocationId: "1",
                 payloadLocationUniqueId: "1-0",
-                type: 0
+                type: 0,
+                parent: null,
             }
         ],
         departureLocation:[
@@ -37,7 +38,8 @@ export const countryDetails = [
                 payloadId: "12-0",
                 payloadLocationId: "12",
                 payloadLocationUniqueId: "12-0",
-                type: 0
+                type: 0,
+                parent: null,
             }
         ],
         departureLocation:[
@@ -64,7 +66,8 @@ export const countryDetails = [
                 payloadId: "43-0",
                 payloadLocationId: "43",
                 payloadLocationUniqueId: "43-0",
-                type: 0
+                type: 0,
+                parent: null,
             }
         ],
         departureLocation:[
@@ -92,7 +95,8 @@ export const countryDetails = [
                 payloadId: "80-0",
                 payloadLocationId: "80",
                 payloadLocationUniqueId: "80-0",
-                type: 0
+                type: 0,
+                parent: null,
             }
         ],
         departureLocation:[
@@ -120,7 +124,8 @@ export const countryDetails = [
                 payloadId: "31-0",
                 payloadLocationId: "31",
                 payloadLocationUniqueId: "31-0",
-                type: 0
+                type: 0,
+                parent: null,
             }
         ],
         departureLocation:[
@@ -145,28 +150,46 @@ export const countryDetails = [
                 payloadName: "Barcelona",
                 payloadCountryName: "Ispanija",
                 payloadFriendlyUrl: "barcelona",
-                payloadId: "42-0",
-                payloadLocationId: "42",
-                payloadLocationUniqueId: "42-0",
-                type: 3
+                payloadId: "112-3",
+                payloadLocationId: "112",
+                payloadLocationUniqueId: "112-3",
+                type: 3,
+                parent: {
+                    payloadCountryId: "42-0",
+                    payloudId: "42",
+                    payloadName: "Ispanija",
+                    type: 0
+                },
             },
             {
                 payloadName: "Fuerteventura",
                 payloadCountryName: "Ispanija",
                 payloadFriendlyUrl: "fuerteventura",
-                payloadId: "42-0",
-                payloadLocationId: "42",
-                payloadLocationUniqueId: "42-0",
-                type: 3
+                payloadId: "12799-3",
+                payloadLocationId: "12799",
+                payloadLocationUniqueId: "12799-3",
+                type: 3,
+                parent: {
+                    payloadCountryId: "42-0",
+                    payloudId: "42",
+                    payloadName: "Ispanija",
+                    type: 0
+                },
             },
             {
                 payloadName: "Gran Canaria",
                 payloadCountryName: "Ispanija",
                 payloadFriendlyUrl: "grancanaria",
-                payloadId: "42-0",
-                payloadLocationId: "42",
-                payloadLocationUniqueId: "42-0",
-                type: 3
+                payloadId: "12092-3",
+                payloadLocationId: "12092",
+                payloadLocationUniqueId: "12092-3",
+                type: 3,
+                parent: {
+                    payloadCountryId: "42-0",
+                    payloudId: "42",
+                    payloadName: "Ispanija",
+                    type: 0
+                },
             }
         ],
         departureLocation:[
@@ -182,6 +205,39 @@ export const countryDetails = [
             "Vasarą",
             "Rudenį",
             "Pavasarį"
+        ]
+    },
+    {
+        userSelected: "Tenerifė",
+        arrivalLocation:[
+            {
+                payloadName: "Tenerifė",
+                payloadCountryName: "Ispanija",
+                payloadFriendlyUrl: "tenerife",
+                payloadId: "3376-3",
+                payloadLocationId: "3376",
+                payloadLocationUniqueId: "3376-3",
+                type: 3,
+                parent: {
+                    payloadCountryId: "42-0",
+                    payloudId: "42",
+                    payloadName: "Ispanija",
+                    type: 0
+                },
+            },
+        ],
+        departureLocation:[
+            {
+                payloadName: "Vilnius",
+                payloadFriendlyUrl: "vilnius",
+                payloadId: "9239-5",
+                payloadLocationId: "9239",
+                payloadLocationUniqueId: "9239-5",
+            }
+        ],
+        availableSeasons:[
+            "Rudenį",
+            "Žiemą"
         ]
     },
 ]
