@@ -10,6 +10,13 @@ import { fetchEncryptedData } from "./scripts/searchResultGenerating.js";
 import { countryDetails } from "./scripts/answersManagement/countryDetails.js";
 import ValuesGenerating from "./scripts/valuesGenerating.js";
 
+import TravelGuide from "./scripts/travelGuide.js";
+import StepManager from "./scripts/stepsManager.js";
+import InfoSheetManager from "./scripts/infoSheetManager.js";
+import ContainersManagement from "./scripts/containersManagement.js";
+import AnswersManagement from "./scripts/answersManagement.js";
+import GuideEffects from "./scripts/guideEffects.js";
+
 document.addEventListener("DOMContentLoaded", () => {
   const guide = new TravelGuide(steps);
 

@@ -1,4 +1,4 @@
-class TravelGuide {
+export default class TravelGuide {
   static NEXT_BUTTON_FINAL_STEP = `
     Pabaiga
   `;

@@ -1,4 +1,4 @@
-class AnswersManagement {
+export default class AnswersManagement {
   static RED_COLOR = "#E4080A";
   static BLACK_COLOR = "#000000";
   static BLUE_COLOR = "#0093d9";

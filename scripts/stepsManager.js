@@ -1,4 +1,4 @@
-class StepManager {
+export default class StepManager {
   constructor(guide, travelGuide) {
     this.guide = guide;
     this.travelGuide = travelGuide;

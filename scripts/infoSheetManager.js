@@ -1,4 +1,4 @@
-class InfoSheetManager {
+export default class InfoSheetManager {
   constructor(infoSheet) {
     this.infoSheet = infoSheet;
 

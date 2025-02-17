@@ -1,4 +1,4 @@
-class ContainersManagement {
+export default class ContainersManagement {
   constructor(guide, steps, fetchEncryptedData) {
     this.guide = guide;
 

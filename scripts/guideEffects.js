@@ -1,4 +1,4 @@
-class GuideEffects {
+export default class GuideEffects {
   constructor(guide, countryDetails) {
     this.guide = guide;
     this.choiceButtons = [];
