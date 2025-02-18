@@ -31,7 +31,7 @@ export const nightManagement = [
         ]
     },
     {
-        value: "10 - 12 naktys",
+        value: "10 - 12 naktų",
         nights:[
             {
                 value: 10
@@ -50,6 +50,12 @@ export const nightManagement = [
             {
                 value: 14
             },
+            {
+                value: 15
+            },
+            {
+                value: 16
+            }
         ]
     }
 ];

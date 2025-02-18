@@ -97,6 +97,36 @@ export const countryDetails = [
                 payloadLocationUniqueId: "80-0",
                 type: 0,
                 parent: null,
+            },
+            {
+                payloadName: "Dubrovnikas",
+                payloadCountryName: "Kroatija",
+                payloadFriendlyUrl: "dubrovnikas",
+                payloadId: "10881-5",
+                payloadLocationId: "10881",
+                payloadLocationUniqueId: "10881-5",
+                type: 5,
+                parent: {
+                    payloadCountryId: "108-0",
+                    payloudId: "10881",
+                    payloadName: "Kroatija",
+                    type: 3
+                },
+            },
+            {
+                payloadName: "Tivatas",
+                payloadCountryName: "Juodkalnija",
+                payloadFriendlyUrl: "tivatas",
+                payloadId: "11911-3",
+                payloadLocationId: "11911",
+                payloadLocationUniqueId: "11911-3",
+                type: 3,
+                parent: {
+                    payloadCountryId: "80-0",
+                    payloudId: "80",
+                    payloadName: "Juodkalnija",
+                    type: 0
+                },
             }
         ],
         departureLocation:[
