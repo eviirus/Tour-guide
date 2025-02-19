@@ -81,6 +81,7 @@ export default class ContainersManagement {
     this.answers = [];
     this.currentStep = 0;
     this.countryChoice = "";
+    this.hotelConceptChoice = "";
     this.guide.guideEffects.applyBannerCarouselEffectsBackward();
   }
 
@@ -164,9 +165,15 @@ export default class ContainersManagement {
 
   handleChoiceButtonClickNoCol(choice, button) {
     this.answers[this.currentStep] = choice;
+
     button.classList.add("selected");
     this.currentStep++;
     this.guide.stepsManager.displayStep(this.currentStep);
+
+    if(this.currentStep - 1 === 0){
+      this.guide.guideEffects.removeCountryChoiceAfterSeasonChange(choice);
+    }
+
     this.guide.guideEffects.applyBannerCarouselEffectsForward();
     this.reapplySelectedChoice();
   }

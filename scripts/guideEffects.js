@@ -2,6 +2,7 @@ export default class GuideEffects {
   constructor(guide, countryDetails) {
     this.guide = guide;
     this.choiceButtons = [];
+    this.seasonArray = [];
     this.countryDetails = countryDetails;
 
     this.initializeDOMElements();
@@ -165,5 +166,18 @@ export default class GuideEffects {
   preventClick(event) {
     event.preventDefault();
     event.stopPropagation();
+  }
+
+  removeCountryChoiceAfterSeasonChange(choice){
+    this.seasonArray.push(choice);
+
+    if (this.seasonArray.length > 1) {
+      if (this.seasonArray[0] !== this.seasonArray[1]) {
+        this.seasonArray.shift();
+        this.guide.containersManagement.countryChoice = "";
+      } else {
+        this.seasonArray.pop();
+      }
+    }
   }
 }
