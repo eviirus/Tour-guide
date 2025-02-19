@@ -9,7 +9,12 @@ export const hotelConceptManagement = [
           value: "3",
         }
       ]
-    }
+    },
+    availableCountries:[
+      "Turkija",
+      "Egiptas",
+      "Graikija"
+    ]
   },
   {
     value: "Ant jūros kranto",
@@ -21,7 +26,13 @@ export const hotelConceptManagement = [
           value: "13",
         }
       ]
-    }
+    },
+    availableCountries:[
+      "Turkija",
+      "Egiptas",
+      "Graikija",
+      "Juodkalnija"
+    ]
   },
   {
     value: "Tik suaugusiems",
@@ -33,7 +44,15 @@ export const hotelConceptManagement = [
           value: "1",
         }
       ]
-    }
+    },
+    availableCountries:[
+      "Turkija",
+      "Egiptas",
+      "Graikija",
+      "Juodkalnija",
+      "Ispanija",
+      "Tenerifė"
+    ]
   },
   {
     value: "Elite viešbučiai",
@@ -45,7 +64,13 @@ export const hotelConceptManagement = [
           value: "2",
         }
       ]
-    }
+    },
+    availableCountries:[
+      "Turkija",
+      "Egiptas",
+      "Graikija",
+      "JAE"
+    ]
   },
   {
     value: "Miesto viešbučiai",
@@ -57,7 +82,12 @@ export const hotelConceptManagement = [
           value: "10",
         }
       ]
-    }
+    },
+    availableCountries:[
+      "Turkija",
+      "Egiptas",
+      "Graikija"
+    ]
   },
   {
     value: "Vandens kalneliai/parkai",
@@ -69,7 +99,16 @@ export const hotelConceptManagement = [
           value: "15",
         }
       ]
-    }
+    },
+    availableCountries:[
+      "Turkija",
+      "Egiptas",
+      "Graikija",
+      "Juodkalnija",
+      "JAE",
+      "Ispanija",
+      "Tenerifė"
+    ]
   },
   {
     value: "Viešbučiai priimantys su gyvūnais",
@@ -81,7 +120,15 @@ export const hotelConceptManagement = [
           value: "19",
         }
       ]
-    }
+    },
+    availableCountries:[
+      "Turkija",
+      "Egiptas",
+      "Graikija",
+      "Juodkalnija",
+      "Ispanija",
+      "Tenerifė"
+    ]
   },
   {
     value: "Coral šeimos atostogos'25",
@@ -93,7 +140,12 @@ export const hotelConceptManagement = [
           value: "30",
         }
       ]
-    }
+    },
+    availableCountries:[
+      "Turkija",
+      "Egiptas",
+      "JAE"
+    ]
   },
   {
     value: "Kambariai pritaikyti neįgaliesiems",
@@ -105,7 +157,43 @@ export const hotelConceptManagement = [
           value: "27",
         }
       ]
-    }
+    },
+    availableCountries:[
+      "Turkija",
+      "Egiptas",
+      "Graikija",
+      "Juodkalnija"
+    ]
+  },
+  {
+    value: "Šildomi baseinai",
+    filterValues: {
+      type: 3,
+      values: [
+        {
+          id: "14",
+          value: "14",
+        }
+      ]
+    },
+    availableCountries:[
+      "Egiptas"
+    ]
+  },
+  {
+    value: "Boutique & Luxury",
+    filterValues: {
+      type: 3,
+      values: [
+        {
+          id: "26",
+          value: "26",
+        }
+      ]
+    },
+    availableCountries:[
+      "Juodkalnija"
+    ]
   },
   {
     value: "Nesvarbu",
