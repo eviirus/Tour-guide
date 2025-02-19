@@ -1,13 +1,12 @@
-import { setTravellerCount } from './answersManagement/priceManagement.js';
+import { setTravellerCount, getPriceManagement } from './answersManagement/priceManagement.js';
 
 class ValuesGenerating{
-    constructor(guide, nightManagement, priceManagement, seasonManagement, travellerManagement, hotelCategoryManagement, hotelConceptManagement){
+    constructor(guide, nightManagement, seasonManagement, travellerManagement, hotelCategoryManagement, hotelConceptManagement){
         this.guide = guide;
 
         this.nightManagement = nightManagement;
         this.travellerManagement = travellerManagement;
         this.seasonManagement = seasonManagement;
-        this.priceManagement = priceManagement;
         this.hotelCategoryManagement = hotelCategoryManagement;
         this.hotelConceptManagement = hotelConceptManagement;
 
@@ -44,7 +43,9 @@ class ValuesGenerating{
 
     generatePriceResult(){
         const priceChoice = this.guide.containersManagement.getPriceChoice();
-        const priceDetail = this.priceManagement.find(detail => detail.value === priceChoice);
+
+        const priceManagement = getPriceManagement();
+        const priceDetail = priceManagement.find(detail => detail.value === priceChoice);
 
         this.priceResult = priceDetail ? priceDetail.filterValues : null;
     }
@@ -84,7 +85,7 @@ class ValuesGenerating{
         localStorage.setItem("travellerCount", JSON.stringify({ travellerCount }));
     
         setTravellerCount();
-      }
+    }
 
     getNightResult(){
         return this.nightResult;

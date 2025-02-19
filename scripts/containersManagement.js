@@ -99,8 +99,8 @@ export default class ContainersManagement {
     this.finalStepContainer.style.display = "flex";
     
     if(!this.guide.answersManagement.checkIfEmpty()){
-      this.guide.valuesGenerating.generateResults();
       this.guide.valuesGenerating.getTravellerCount();
+      this.guide.valuesGenerating.generateResults();
   
       const values = this.guide.valuesGenerating.getValues();
       try {

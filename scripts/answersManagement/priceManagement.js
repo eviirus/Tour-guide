@@ -7,57 +7,59 @@ export function setTravellerCount() {
     const data = localStorage.getItem("travellerCount");
     if (data) {
       const json = JSON.parse(data);
-      travellerCount = json.travellerCount || 2;
+      travellerCount = json.travellerCount;
     }
   } catch (error) {
-    console.error("Error reading traveller count from localStorage:", error);
+    console.error(error);
   }
 
   multiplier = travellerCount;
 }
 
-export const priceManagement = [
-  {
-    value: "iki 700€ asm.",
-    filterValues: {
-      type: 15,
-      values: [
-        {
-          id: "",
-          value: `0-${multiplier * 700}`,
-        },
-      ],
+export function getPriceManagement(){
+  return [
+    {
+      value: "iki 700€ asm.",
+      filterValues: {
+        type: 15,
+        values: [
+          {
+            id: "",
+            value: `0-${multiplier * 700}`,
+          },
+        ],
+      },
     },
-  },
-  {
-    value: "iki 1000€ asm.",
-    filterValues: {
-      type: 15,
-      values: [
-        {
-          id: "",
-          value: `0-${multiplier * 1000}`,
-        },
-      ],
+    {
+      value: "iki 1000€ asm.",
+      filterValues: {
+        type: 15,
+        values: [
+          {
+            id: "",
+            value: `0-${multiplier * 1000}`,
+          },
+        ],
+      },
     },
-  },
-  {
-    value: "virš 1000€ asm.",
-    filterValues: {
-      type: 15,
-      values: [
-        {
-          id: "",
-          value: `${multiplier * 1000}-10000000`,
-        },
-      ],
+    {
+      value: "virš 1000€ asm.",
+      filterValues: {
+        type: 15,
+        values: [
+          {
+            id: "",
+            value: `${multiplier * 1000}-10000000`,
+          },
+        ],
+      },
     },
-  },
-  {
-    value: "",
-    filterValues: {
-      type: 15,
-      values: []
-    }
-  },
-];
+    {
+      value: "",
+      filterValues: {
+        type: 15,
+        values: []
+      }
+    },
+  ];  
+} 
