@@ -56,6 +56,8 @@ export default class GuideEffects {
   }
 
   applyBannerCarouselEffectsForward() {
+    let finalStepApplied = false;
+
     const images = Array.from(
       document.querySelectorAll(".travel-help-banner-carousel img")
     );
@@ -70,6 +72,14 @@ export default class GuideEffects {
 
       images[currentIndex + 1].classList.remove("next");
       images[currentIndex + 1].classList.add("current");
+    } else if(!finalStepApplied && currentIndex === images.length - 2){
+      images[currentIndex].classList.remove("current");
+      images[currentIndex].classList.add("prev");
+
+      images[currentIndex + 1].classList.remove("next");
+      images[currentIndex + 1].classList.add("current");
+
+      finalStepApplied = true;
     }
   }
 

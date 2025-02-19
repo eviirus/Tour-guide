@@ -94,6 +94,7 @@ export default class ContainersManagement {
   async navigateNextToFinalStep() {
     this.guide.stepsManager.catchAnswer();
     this.guide.stepsManager.updateProgress((this.isFinal = true));
+    this.guide.guideEffects.applyBannerCarouselEffectsForward();
     this.guide.nextButtonState();
     this.stepContainer.style.display = "none";
     this.finalStepContainer.style.display = "flex";
@@ -111,8 +112,6 @@ export default class ContainersManagement {
         console.error("Error fetching encrypted data:", error);
       }
     }
-
-    this.guide.guideEffects.applyBannerCarouselEffectsForward();
   }
 
   updateLayoutGrid() {

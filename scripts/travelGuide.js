@@ -45,15 +45,9 @@ export default class TravelGuide {
   }
 
   attachNextButtonListener() {
-    if (this.isFinal()) {
-      this.nextBtn.removeEventListener("click", this.nextBtn._handlerRef);
-      this.nextBtn._handlerRef = null;
-      this.nextBtn.classList.add("disabled");
-    } else {
-      this.attachButtonListener(this.nextBtn, () => {
+    this.attachButtonListener(this.nextBtn, () => {
         this.containersManagement.handleNextButtonClick();
-      });
-    }
+    });
   }
 
   attachButtonListener(button, handler) {
