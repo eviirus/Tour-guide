@@ -155,6 +155,8 @@
 
 .final-step-button-wrapper{
   width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .final-step-button-view,
@@ -208,6 +210,23 @@
 .arrow-icon-down.svg{
   width: 21px;
   height: 21px;
+}
+
+.loading-spinner {
+  display: none;
+  margin: 0 auto;
+  border: 4px solid transparent;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 41px;
+  height: 41px;
+  animation: spin 2s linear infinite;
+  position: relative;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 @media (max-width: 530px) {

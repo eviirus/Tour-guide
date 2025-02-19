@@ -22,6 +22,7 @@ export default class ContainersManagement {
     this.infoSheetContainer = document.querySelector(".travel-info-sheet");
     this.buttonContainer = document.querySelector(".step-choice-grid");
     this.searchResultButton = document.querySelector('.final-step-button-view');
+    this.loadingSpinner = document.querySelector(".loading-spinner");
   }
 
   startSteps() {
@@ -103,14 +104,21 @@ export default class ContainersManagement {
     if(!this.guide.answersManagement.checkIfEmpty()){
       this.guide.valuesGenerating.getTravellerCount();
       this.guide.valuesGenerating.generateResults();
-  
+
       const values = this.guide.valuesGenerating.getValues();
       try {
+        this.searchResultButton.style.display = "none";
+        this.loadingSpinner.style.display = "flex";
         const link = await this.fetchEncryptedData(this.countryChoice, values);
+
         this.searchResultButton.href = link;
         console.log(link);
+        this.loadingSpinner.style.display = "none";
+        this.searchResultButton.style.display = "flex";
+
       } catch (error) {
-        console.error("Error fetching encrypted data:", error);
+        console.error(error);
+        this.loadingSpinner.style.display = "none";
       }
     }
   }
