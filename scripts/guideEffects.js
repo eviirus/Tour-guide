@@ -1,9 +1,9 @@
 export default class GuideEffects {
-  constructor(guide, countryDetails) {
+  constructor(guide, countryDetails, hotelConceptManagement) {
     this.guide = guide;
     this.choiceButtons = [];
     this.seasonArray = [];
-    this.countryDetails = countryDetails;
+    //this.countryDetails = countryDetails;
 
     this.initializeDOMElements();
     this.closeOptionalAnswers();
@@ -131,30 +131,26 @@ export default class GuideEffects {
     this.choiceButtons.push(button);
   }
 
-  hideUnavailableChoices() {
-    this.checkIfAvailable();
+  hideUnavailableChoices(choice, management, detail, identifier) {
+    this.checkIfAvailable(choice, management, detail, identifier);
 
     this.choiceButtons.forEach(button => {
-      if (button.classList.contains("grid")) {
-        if (button.dataset.available === "true") {
-          button.classList.remove("disabled");
-          button.removeEventListener("click", this.preventClick);
-        } else {
-          button.classList.add("disabled");
-          button.addEventListener("click", this.preventClick);
-        }
+      if (button.dataset.available === "true") {
+        button.classList.remove("disabled");
+        button.removeEventListener("click", this.preventClick);
+      } else {
+        button.classList.add("disabled");
+        button.addEventListener("click", this.preventClick);
       }
     });
   }
 
-  checkIfAvailable() {
-    const season = this.guide.containersManagement.getSeasonChoice();
-
+  checkIfAvailable(choice, management, detail, identifier) {
     this.choiceButtons.forEach(button => {
       let isAvailable = false;
 
-      this.countryDetails.forEach(countryDetail => {
-        if (countryDetail.availableSeasons.includes(season) && countryDetail.userSelected === button.dataset.choice) {
+      management.forEach(data => {
+        if (data[detail].includes(choice) && data[identifier] === button.dataset.choice) {
           isAvailable = true;
         }
       });

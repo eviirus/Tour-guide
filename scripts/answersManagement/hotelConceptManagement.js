@@ -200,13 +200,29 @@ export const hotelConceptManagement = [
     filterValues: {
       type: 3,
       values: []
-    }
+    },
+    availableCountries:[
+      "Turkija",
+      "Egiptas",
+      "Graikija",
+      "Juodkalnija",
+      "Ispanija",
+      "Tenerifė"
+    ]
   },
   {
     value: "",
     filterValues: {
       type: 3,
       values: []
-    }
+    },
+    availableCountries:[
+      "Turkija",
+      "Egiptas",
+      "Graikija",
+      "Juodkalnija",
+      "Ispanija",
+      "Tenerifė"
+    ]
   }
 ];

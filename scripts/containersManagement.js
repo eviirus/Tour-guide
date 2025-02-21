@@ -165,9 +165,12 @@ export default class ContainersManagement {
         .querySelectorAll(".choice-button")
         .forEach((btn) => btn.classList.remove("selected"));
 
-      button.classList.add("selected");
-      
-      this.hotelConceptChoice = choice;
+      if(this.checkIfChoiceAvailable(choice)){
+        this.hotelConceptChoice = choice;
+        button.classList.add("selected");
+      } else{
+        this.hotelConceptChoice = "";
+      }
     }
   }
 

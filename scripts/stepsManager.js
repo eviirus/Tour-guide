@@ -1,7 +1,8 @@
 export default class StepManager {
-  constructor(guide, travelGuide) {
+  constructor(guide, countryDetails, hotelConceptManagement) {
     this.guide = guide;
-    this.travelGuide = travelGuide;
+    this.countryDetails = countryDetails;
+    this.hotelConceptManagement = hotelConceptManagement;
 
     this.currentStepData = null;
 
@@ -37,9 +38,11 @@ export default class StepManager {
     stepData.choices.forEach((choice) =>
       this.createChoiceButton(choice, stepData)
     );
-    
-    if(stepIndex === 2){
-      this.guide.guideEffects.hideUnavailableChoices();
+
+    if (stepIndex === 2) {
+      this.guide.guideEffects.hideUnavailableChoices(this.guide.containersManagement.getSeasonChoice(), this.countryDetails, "availableSeasons", "userSelected");
+    } else if (stepIndex === 6) {
+      this.guide.guideEffects.hideUnavailableChoices(this.guide.containersManagement.getCountryChoice(), this.hotelConceptManagement, "availableCountries", "value");
     }
     
     this.updateProgress();

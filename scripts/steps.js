@@ -56,6 +56,8 @@ export const steps = [
       "Viešbučiai priimantys su gyvūnais",
       "Coral šeimos atostogos'25",
       "Kambariai pritaikyti neįgaliesiems",
+      "Šildomi baseinai",
+      "Boutique & Luxury",
       "Nesvarbu"
     ],
     layout: "grid-two-col",
